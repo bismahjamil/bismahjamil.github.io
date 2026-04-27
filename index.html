@@ -1,3 +1,6 @@
+<!-- Use image file name: profile.jpg -->
+<!-- Save this file as: index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +24,6 @@
       --text:#f7fff9;
       --muted:#b6c7bd;
       --line:rgba(214,181,109,.24);
-      --glass:rgba(255,255,255,.055);
       --shadow:0 30px 90px rgba(0,0,0,.45);
     }
 
@@ -61,7 +63,6 @@
       font-size:1.7rem;
       color:var(--gold2);
       font-weight:700;
-      letter-spacing:.02em;
     }
 
     .links{
@@ -83,17 +84,6 @@
       align-items:center;
       position:relative;
       overflow:hidden;
-    }
-
-    .hero::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(90deg,rgba(3,9,7,.15),rgba(3,9,7,.65)),
-        url("profile.jpg");
-      background-size:0;
-      pointer-events:none;
     }
 
     .hero-grid{
@@ -221,7 +211,6 @@
       color:rgba(240,217,154,.30);
       font-family:"Cormorant Garamond",serif;
       font-size:1.45rem;
-      letter-spacing:.05em;
       text-align:center;
     }
 
@@ -269,7 +258,6 @@
       color:var(--gold2);
       font-family:"Cormorant Garamond",serif;
       font-size:1.45rem;
-      line-height:1.1;
       margin-bottom:8px;
     }
 
@@ -278,9 +266,7 @@
       font-size:.9rem;
     }
 
-    section{
-      padding:95px 0;
-    }
+    section{padding:95px 0}
 
     .section-head{
       max-width:820px;
@@ -307,8 +293,7 @@
     }
 
     .card{
-      background:
-        linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));
+      background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));
       border:1px solid var(--line);
       border-radius:28px;
       padding:30px;
@@ -328,9 +313,7 @@
       margin-bottom:12px;
     }
 
-    .card p{
-      color:#d7e4dd;
-    }
+    .card p{color:#d7e4dd}
 
     .pills{
       display:flex;
@@ -346,12 +329,15 @@
       color:#eefbf4;
       font-weight:700;
       font-size:.92rem;
+      transition:.25s;
     }
 
-    .timeline{
-      display:grid;
-      gap:18px;
+    .pill:hover{
+      background:rgba(214,181,109,.14);
+      color:var(--gold2);
     }
+
+    .timeline{display:grid;gap:18px}
 
     .item{
       display:grid;
@@ -392,6 +378,11 @@
       gap:20px;
       padding:26px;
       border-bottom:1px solid var(--line);
+      transition:.25s;
+    }
+
+    .pub:hover{
+      background:rgba(214,181,109,.06);
     }
 
     .pub:last-child{border-bottom:0}
@@ -411,6 +402,10 @@
       color:white;
     }
 
+    .pub a:hover strong{
+      color:var(--gold2);
+    }
+
     .pub span{
       display:block;
       margin-top:6px;
@@ -422,6 +417,13 @@
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:22px;
+    }
+
+    .profile-buttons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:18px;
     }
 
     footer{
@@ -617,69 +619,125 @@
 <section id="publications">
   <div class="container">
     <div class="section-head">
-      <h2>Selected Publications</h2>
+      <h2>Publications</h2>
       <p>
-        A selection of published and recent research contributions in symmetry methods,
+        Published, submitted and preprint research contributions in symmetry methods,
         differential equations and mathematical physics.
       </p>
     </div>
 
     <div class="publication-list">
+
       <div class="pub">
-        <div class="pub-num">01</div>
+        <div class="pub-num">J1</div>
         <div>
-          <strong>Lie reduced order modeling of unsteady thermosolutal Marangoni magnetohydrodynamic convection conjoined with chemical reaction and heat generation.</strong>
-          <span>Results in Physics, 2025.</span>
+          <a href="https://www.sciencedirect.com/science/article/pii/S2211379725003869" target="_blank" rel="noopener">
+            <strong>Lie reduced order modeling of unsteady thermosolutal Marangoni magnetohydrodynamic convection conjoined with chemical reaction and heat generation.</strong>
+          </a>
+          <span>Results in Physics, 78, 108492, 2025.</span>
         </div>
       </div>
 
       <div class="pub">
-        <div class="pub-num">02</div>
+        <div class="pub-num">J2</div>
         <div>
-          <strong>Lie symmetries in nonlinear liquid film flow with heat and mass transfer and variable magnetic field.</strong>
-          <span>Fractals, 2025.</span>
+          <a href="https://www.worldscientific.com/doi/10.1142/S0218348X25402492" target="_blank" rel="noopener">
+            <strong>Lie symmetries in nonlinear liquid film flow with heat and mass transfer and variable magnetic field.</strong>
+          </a>
+          <span>Fractals, 33(10), 2540249, 2025.</span>
         </div>
       </div>
 
       <div class="pub">
-        <div class="pub-num">03</div>
+        <div class="pub-num">J3</div>
         <div>
-          <strong>Lie optimal solutions of heat transfer in a liquid film over an unsteady stretching surface with viscous dissipation and external magnetic field.</strong>
-          <span>Materials Proceedings, 2025.</span>
+          <a href="https://www.mdpi.com/2673-4605/23/1/7" target="_blank" rel="noopener">
+            <strong>Lie optimal solutions of heat transfer in a liquid film over an unsteady stretching surface with viscous dissipation and external magnetic field.</strong>
+          </a>
+          <span>Materials Proceedings, 23(1), 7, 2025.</span>
         </div>
       </div>
 
       <div class="pub">
-        <div class="pub-num">04</div>
+        <div class="pub-num">J4</div>
         <div>
-          <strong>One-dimensional optimal system of Lie sub-algebra and analytic solutions for a liquid film fluid flow.</strong>
-          <span>Chinese Journal of Physics, 2022.</span>
+          <a href="https://www.sciencedirect.com/science/article/pii/S0577907322001264" target="_blank" rel="noopener">
+            <strong>One-dimensional optimal system of Lie sub-algebra and analytic solutions for a liquid film fluid flow.</strong>
+          </a>
+          <span>Chinese Journal of Physics, 77, 1–15, 2022.</span>
         </div>
       </div>
 
       <div class="pub">
-        <div class="pub-num">05</div>
+        <div class="pub-num">J5</div>
         <div>
-          <strong>Optimal systems and their group-invariant solutions to geodesic equations.</strong>
-          <span>International Journal of Geometric Methods in Modern Physics, 2019.</span>
+          <a href="https://www.worldscientific.com/doi/10.1142/S0219887819501354" target="_blank" rel="noopener">
+            <strong>Optimal systems and their group-invariant solutions to geodesic equations.</strong>
+          </a>
+          <span>International Journal of Geometric Methods in Modern Physics, 16, 1950135, 2019.</span>
         </div>
       </div>
 
       <div class="pub">
-        <div class="pub-num">06</div>
+        <div class="pub-num">J6</div>
         <div>
-          <strong>Conservation laws corresponding to the Noether symmetries of the geodetic Lagrangian in spherically symmetric spacetimes.</strong>
-          <span>International Journal of Modern Physics D, 2017.</span>
+          <a href="https://www.worldscientific.com/doi/10.1142/S0218271817410061" target="_blank" rel="noopener">
+            <strong>Conservation laws corresponding to the Noether symmetries of the geodetic Lagrangian in spherically symmetric spacetimes.</strong>
+          </a>
+          <span>International Journal of Modern Physics D, 26(5), 1741006, 2017.</span>
         </div>
       </div>
 
       <div class="pub">
-        <div class="pub-num">07</div>
+        <div class="pub-num">J7</div>
         <div>
-          <strong>Geometrical/Physical interpretation of conserved quantities corresponding to Noether symmetries of plane symmetric spacetimes.</strong>
-          <span>Advances in Mathematical Physics, 2017.</span>
+          <a href="https://onlinelibrary.wiley.com/doi/10.1155/2017/4384093" target="_blank" rel="noopener">
+            <strong>Geometrical/Physical interpretation of the conserved quantities corresponding to Noether symmetries of plane symmetric spacetimes.</strong>
+          </a>
+          <span>Advances in Mathematical Physics, Article ID 4384093, 2017.</span>
         </div>
       </div>
+
+      <div class="pub">
+        <div class="pub-num">J8</div>
+        <div>
+          <a href="https://www.worldscientific.com/doi/abs/10.1142/9789814623995_0294" target="_blank" rel="noopener">
+            <strong>Classification of a class of plane symmetric static spacetimes according to the Noether symmetries.</strong>
+          </a>
+          <span>The Thirteenth Marcel Grossmann Meeting, 1840–1843, 2015.</span>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-num">S1</div>
+        <div>
+          <a href="https://scholar.google.com/scholar?q=%22Some+exact+solutions+for+nonlinear+partial+differential+equations+of+double+diffusive+convection+in+an+open+cavity+using+optimal+system+of+Lie+sub-algebra%22" target="_blank" rel="noopener">
+            <strong>Some exact solutions for nonlinear partial differential equations of double diffusive convection in an open cavity using optimal system of Lie sub-algebra.</strong>
+          </a>
+          <span>Submitted.</span>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-num">S2</div>
+        <div>
+          <a href="https://scholar.google.com/scholar?q=%22Optimal+system+and+group-invariant+solutions+of+the+nonhomogeneous+Monge-Ampere+equation%22" target="_blank" rel="noopener">
+            <strong>Optimal system and group-invariant solutions of the nonhomogeneous Monge-Ampère equation.</strong>
+          </a>
+          <span>Submitted.</span>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-num">S3</div>
+        <div>
+          <a href="https://scholar.google.com/scholar?q=%22Lie+solvable+classes+for+a+squeezing+unsteady+magnetohydrodynamic+Casson+fluid+flow+between+two+parallel+plates%22" target="_blank" rel="noopener">
+            <strong>Lie solvable classes for a squeezing unsteady magnetohydrodynamic Casson fluid flow between two parallel plates under thermal radiation, thermal diffusion and diffusion-thermo effects.</strong>
+          </a>
+          <span>Preprint.</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -736,12 +794,38 @@
       </div>
 
       <div class="card">
-        <h3>Research IDs</h3>
+        <h3>Academic Profiles</h3>
         <p>
-          ORCID: 0000-0001-6652-2870<br>
-          Scopus Author ID: 57193835867<br>
-          Web of Science Researcher ID: OMK-5389-2025
+          ORCID: 
+          <a href="https://orcid.org/0000-0001-6652-2870" target="_blank" rel="noopener">
+            0000-0001-6652-2870
+          </a>
+          <br>
+
+          Scopus Author ID:
+          <a href="https://www.scopus.com/authid/detail.uri?authorId=57193835867" target="_blank" rel="noopener">
+            57193835867
+          </a>
+          <br>
+
+          Web of Science Researcher ID:
+          <a href="https://www.webofscience.com/wos/author/record/OMK-5389-2025" target="_blank" rel="noopener">
+            OMK-5389-2025
+          </a>
+          <br>
+
+          Google Scholar:
+          <a href="https://scholar.google.com/citations?hl=en&user=lAAUeN4AAAAJ" target="_blank" rel="noopener">
+            Profile
+          </a>
         </p>
+
+        <div class="profile-buttons">
+          <a class="pill" href="https://orcid.org/0000-0001-6652-2870" target="_blank" rel="noopener">ORCID</a>
+          <a class="pill" href="https://www.scopus.com/authid/detail.uri?authorId=57193835867" target="_blank" rel="noopener">Scopus</a>
+          <a class="pill" href="https://www.webofscience.com/wos/author/record/OMK-5389-2025" target="_blank" rel="noopener">Web of Science</a>
+          <a class="pill" href="https://scholar.google.com/citations?hl=en&user=lAAUeN4AAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+        </div>
       </div>
     </div>
   </div>
