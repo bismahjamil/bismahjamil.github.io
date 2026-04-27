@@ -1,841 +1,190 @@
-<!-- Use image file name: profile.jpg -->
-<!-- Save this file as: index.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Dr. Bismah Jamil | Academic Portfolio</title>
+<title>Dr. Bismah Jamil</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --bg:#030907;
-      --emerald:#06251b;
-      --emerald2:#0b3b2b;
-      --emerald3:#0f5c43;
-      --gold:#d6b56d;
-      --gold2:#f0d99a;
-      --text:#f7fff9;
-      --muted:#b6c7bd;
-      --line:rgba(214,181,109,.24);
-      --shadow:0 30px 90px rgba(0,0,0,.45);
-    }
+<style>
 
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{
-      font-family:Inter,sans-serif;
-      background:
-        radial-gradient(circle at 20% 10%,rgba(15,92,67,.35),transparent 30%),
-        radial-gradient(circle at 90% 15%,rgba(214,181,109,.18),transparent 25%),
-        linear-gradient(135deg,#020806,#06120e 45%,#030907);
-      color:var(--text);
-      line-height:1.7;
-    }
+body{
+  margin:0;
+  font-family:Inter;
+  background:#02120d;
+  color:white;
+}
 
-    a{text-decoration:none;color:inherit}
-    .container{width:min(1180px,92%);margin:auto}
+/* NAVBAR */
+nav{
+  position:fixed;
+  width:100%;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  display:flex;
+  justify-content:space-between;
+  padding:18px 60px;
+  z-index:100;
+}
 
-    nav{
-      position:fixed;
-      top:0;left:0;right:0;
-      z-index:1000;
-      background:rgba(3,9,7,.76);
-      backdrop-filter:blur(20px);
-      border-bottom:1px solid var(--line);
-    }
+nav a{
+  color:#d6c08c;
+  margin-left:30px;
+  text-decoration:none;
+  font-weight:600;
+}
 
-    .nav{
-      height:78px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-    }
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  padding:0 60px;
+  background:
+    linear-gradient(to right, rgba(0,0,0,0.8) 40%, transparent),
+    url("bg.jpg") right/cover no-repeat;
+}
 
-    .logo{
-      font-family:"Cormorant Garamond",serif;
-      font-size:1.7rem;
-      color:var(--gold2);
-      font-weight:700;
-    }
+/* LEFT TEXT */
+.hero-left{
+  width:50%;
+}
 
-    .links{
-      display:flex;
-      gap:28px;
-      font-size:.88rem;
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:.08em;
-      color:#dcebe2;
-    }
+.hero-left h1{
+  font-family:"Playfair Display";
+  font-size:90px;
+  line-height:0.9;
+}
 
-    .links a:hover{color:var(--gold2)}
+.hero-left span{
+  color:#d6b56d;
+}
 
-    .hero{
-      min-height:100vh;
-      padding-top:78px;
-      display:grid;
-      align-items:center;
-      position:relative;
-      overflow:hidden;
-    }
+.hero-left p{
+  margin-top:20px;
+  font-size:18px;
+  color:#ddd;
+}
 
-    .hero-grid{
-      position:relative;
-      z-index:2;
-      display:grid;
-      grid-template-columns:1.08fr .92fr;
-      gap:55px;
-      align-items:center;
-      padding:70px 0;
-    }
+/* BUTTONS */
+.buttons{
+  margin-top:30px;
+}
 
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      color:var(--gold2);
-      border:1px solid var(--line);
-      background:rgba(214,181,109,.08);
-      padding:9px 16px;
-      border-radius:999px;
-      font-size:.78rem;
-      font-weight:800;
-      text-transform:uppercase;
-      letter-spacing:.12em;
-      margin-bottom:26px;
-    }
+.btn{
+  padding:14px 25px;
+  border-radius:8px;
+  border:1px solid #d6b56d;
+  margin-right:15px;
+  cursor:pointer;
+}
 
-    .badge::before{
-      content:"";
-      width:8px;height:8px;
-      border-radius:50%;
-      background:var(--gold2);
-      box-shadow:0 0 18px var(--gold2);
-    }
+.btn.gold{
+  background:#d6b56d;
+  color:black;
+}
 
-    h1{
-      font-family:"Cormorant Garamond",serif;
-      font-size:clamp(4rem,8vw,7.7rem);
-      line-height:.86;
-      letter-spacing:-.04em;
-      color:#fffdf2;
-      margin-bottom:24px;
-    }
+/* RIGHT IMAGE */
+.hero-right{
+  width:50%;
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+}
 
-    .title-line{
-      font-size:clamp(1.15rem,2vw,1.55rem);
-      color:var(--gold2);
-      font-weight:700;
-      margin-bottom:22px;
-    }
+.hero-right img{
+  height:90%;
+  object-fit:contain;
+  filter:drop-shadow(0 20px 40px black);
+}
 
-    .typing{
-      display:inline-block;
-      overflow:hidden;
-      white-space:nowrap;
-      border-right:3px solid var(--gold2);
-      max-width:0;
-      animation:typing 4.6s steps(62,end) forwards,blink .8s infinite;
-    }
+/* CARD STRIP */
+.stats{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  display:flex;
+  justify-content:center;
+}
 
-    @keyframes typing{to{max-width:100%}}
-    @keyframes blink{50%{border-color:transparent}}
+.stats-box{
+  background:rgba(0,40,30,0.9);
+  border:1px solid #d6b56d;
+  display:flex;
+  gap:60px;
+  padding:30px 60px;
+  border-radius:15px;
+  transform:translateY(50%);
+}
 
-    .lead{
-      max-width:650px;
-      color:#d9e8df;
-      font-size:1.08rem;
-      margin-bottom:34px;
-    }
+.stats-box div{
+  text-align:center;
+}
 
-    .actions{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-    }
+.stats-box h3{
+  color:#d6b56d;
+}
 
-    .btn{
-      padding:14px 22px;
-      border-radius:999px;
-      font-weight:800;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.06);
-      transition:.3s;
-    }
-
-    .btn.primary{
-      background:linear-gradient(135deg,var(--gold2),var(--gold));
-      color:#0b1711;
-    }
-
-    .btn:hover{
-      transform:translateY(-4px);
-      box-shadow:0 15px 35px rgba(0,0,0,.25);
-    }
-
-    .visual{
-      position:relative;
-      min-height:680px;
-      display:flex;
-      justify-content:center;
-      align-items:flex-end;
-    }
-
-    .arch{
-      position:absolute;
-      width:86%;
-      height:92%;
-      bottom:0;
-      border-radius:260px 260px 34px 34px;
-      background:
-        linear-gradient(180deg,rgba(214,181,109,.18),transparent 35%),
-        linear-gradient(135deg,#0b3b2b,#03120d);
-      border:1px solid var(--line);
-      box-shadow:var(--shadow);
-      overflow:hidden;
-    }
-
-    .arch::before{
-      content:"∂u/∂t + X(u)=0   ·   Lie Symmetry   ·   Noether";
-      position:absolute;
-      top:42px;
-      left:35px;
-      right:35px;
-      color:rgba(240,217,154,.30);
-      font-family:"Cormorant Garamond",serif;
-      font-size:1.45rem;
-      text-align:center;
-    }
-
-    .arch::after{
-      content:"";
-      position:absolute;
-      inset:90px 36px 40px;
-      border-radius:20px;
-      background:
-        repeating-linear-gradient(90deg,#16283f 0 18px,#8a5d2f 18px 32px,#1d513e 32px 55px,#693428 55px 70px,#c39d4d 70px 77px);
-      opacity:.42;
-      mask-image:linear-gradient(to bottom,#000,transparent 70%);
-    }
-
-    .portrait{
-      position:relative;
-      z-index:5;
-      width:min(430px,88%);
-      max-height:650px;
-      object-fit:cover;
-      object-position:center;
-      border-radius:34px;
-      border:1px solid rgba(240,217,154,.35);
-      box-shadow:
-        0 35px 80px rgba(0,0,0,.55),
-        0 0 0 10px rgba(255,255,255,.035);
-    }
-
-    .floating-card{
-      position:absolute;
-      z-index:7;
-      left:0;
-      bottom:58px;
-      width:240px;
-      background:rgba(3,9,7,.74);
-      backdrop-filter:blur(20px);
-      border:1px solid var(--line);
-      border-radius:24px;
-      padding:20px;
-      box-shadow:var(--shadow);
-    }
-
-    .floating-card strong{
-      display:block;
-      color:var(--gold2);
-      font-family:"Cormorant Garamond",serif;
-      font-size:1.45rem;
-      margin-bottom:8px;
-    }
-
-    .floating-card span{
-      color:var(--muted);
-      font-size:.9rem;
-    }
-
-    section{padding:95px 0}
-
-    .section-head{
-      max-width:820px;
-      margin-bottom:38px;
-    }
-
-    h2{
-      font-family:"Cormorant Garamond",serif;
-      font-size:clamp(2.8rem,5vw,4.6rem);
-      line-height:.95;
-      color:#fffdf2;
-      margin-bottom:16px;
-    }
-
-    .section-head p{
-      color:var(--muted);
-      font-size:1.05rem;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:22px;
-    }
-
-    .card{
-      background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));
-      border:1px solid var(--line);
-      border-radius:28px;
-      padding:30px;
-      box-shadow:0 20px 60px rgba(0,0,0,.22);
-      transition:.35s;
-    }
-
-    .card:hover{
-      transform:translateY(-7px);
-      border-color:rgba(240,217,154,.55);
-    }
-
-    .card h3{
-      color:var(--gold2);
-      font-family:"Cormorant Garamond",serif;
-      font-size:1.65rem;
-      margin-bottom:12px;
-    }
-
-    .card p{color:#d7e4dd}
-
-    .pills{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-    }
-
-    .pill{
-      padding:10px 16px;
-      border-radius:999px;
-      background:rgba(15,92,67,.22);
-      border:1px solid rgba(214,181,109,.2);
-      color:#eefbf4;
-      font-weight:700;
-      font-size:.92rem;
-      transition:.25s;
-    }
-
-    .pill:hover{
-      background:rgba(214,181,109,.14);
-      color:var(--gold2);
-    }
-
-    .timeline{display:grid;gap:18px}
-
-    .item{
-      display:grid;
-      grid-template-columns:150px 1fr;
-      gap:24px;
-      padding:24px;
-      border-radius:24px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.045);
-    }
-
-    .year{
-      color:var(--gold2);
-      font-weight:900;
-    }
-
-    .item strong{
-      color:white;
-      font-size:1.05rem;
-    }
-
-    .item p{
-      color:var(--muted);
-      margin-top:5px;
-    }
-
-    .publication-list{
-      background:rgba(255,255,255,.045);
-      border:1px solid var(--line);
-      border-radius:30px;
-      overflow:hidden;
-      box-shadow:var(--shadow);
-    }
-
-    .pub{
-      display:grid;
-      grid-template-columns:75px 1fr;
-      gap:20px;
-      padding:26px;
-      border-bottom:1px solid var(--line);
-      transition:.25s;
-    }
-
-    .pub:hover{
-      background:rgba(214,181,109,.06);
-    }
-
-    .pub:last-child{border-bottom:0}
-
-    .pub-num{
-      width:46px;height:46px;
-      border-radius:50%;
-      display:grid;
-      place-items:center;
-      background:rgba(214,181,109,.12);
-      color:var(--gold2);
-      font-weight:900;
-      border:1px solid var(--line);
-    }
-
-    .pub strong{
-      color:white;
-    }
-
-    .pub a:hover strong{
-      color:var(--gold2);
-    }
-
-    .pub span{
-      display:block;
-      margin-top:6px;
-      color:var(--muted);
-      font-size:.92rem;
-    }
-
-    .contact-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:22px;
-    }
-
-    .profile-buttons{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:18px;
-    }
-
-    footer{
-      padding:38px;
-      text-align:center;
-      color:var(--muted);
-      border-top:1px solid var(--line);
-      background:rgba(0,0,0,.18);
-    }
-
-    @media(max-width:930px){
-      .links{display:none}
-      .hero-grid{grid-template-columns:1fr}
-      .visual{min-height:560px}
-      .grid,.contact-grid{grid-template-columns:1fr}
-      .item{grid-template-columns:1fr}
-      .typing{white-space:normal}
-      .floating-card{left:20px}
-    }
-  </style>
+</style>
 </head>
 
 <body>
 
 <nav>
-  <div class="container nav">
-    <a class="logo" href="#home">Dr. Bismah Jamil</a>
-    <div class="links">
-      <a href="#about">About</a>
-      <a href="#research">Research</a>
-      <a href="#experience">Experience</a>
-      <a href="#publications">Publications</a>
-      <a href="#contact">Contact</a>
-    </div>
+  <div><b>Dr. Bismah Jamil</b></div>
+  <div>
+    <a href="#">Home</a>
+    <a href="#">Research</a>
+    <a href="#">Publications</a>
+    <a href="#">Contact</a>
   </div>
 </nav>
 
-<header class="hero" id="home">
-  <div class="container hero-grid">
+<section class="hero">
 
-    <div>
-      <div class="badge">Mathematician · Researcher · Educator</div>
+  <div class="hero-left">
+    <h1>Dr. Bismah <span>Jamil</span></h1>
 
-      <h1>Dr. Bismah<br>Jamil</h1>
+    <p>
+      Symmetry methods for solving differential equations.
+      My research explores symmetry analysis as a powerful approach
+      for obtaining exact solutions in mathematical physics.
+    </p>
 
-      <div class="title-line">
-        <span class="typing">Symmetry methods for solving differential equations.</span>
-      </div>
-
-      <p class="lead">
-        My research explores symmetry analysis as a powerful approach for obtaining exact solutions
-        of differential equations, with applications in geodesic systems, fluid flow, heat transfer,
-        conservation laws and mathematical physics.
-      </p>
-
-      <div class="actions">
-        <a class="btn primary" href="#publications">View Publications</a>
-        <a class="btn" href="#research">Research Interests</a>
-        <a class="btn" href="#contact">Contact</a>
-      </div>
+    <div class="buttons">
+      <span class="btn gold">View Publications</span>
+      <span class="btn">About Me</span>
     </div>
-
-    <div class="visual">
-      <div class="arch"></div>
-      <img class="portrait" src="profile.jpg" alt="Dr. Bismah Jamil">
-
-      <div class="floating-card">
-        <strong>Symmetry Analysis</strong>
-        <span>Lie symmetries · Noether symmetries · Conservation laws</span>
-      </div>
-    </div>
-
   </div>
-</header>
 
-<main>
+  <div class="hero-right">
+    <img src="profile.png">
+  </div>
 
-<section id="about">
-  <div class="container">
-    <div class="section-head">
-      <h2>Academic Profile</h2>
-      <p>
-        A mathematician working at the intersection of symmetry methods, differential equations,
-        geometry and mathematical physics.
-      </p>
-    </div>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Research Vision</h3>
-        <p>
-          I study how symmetry methods reveal exact solutions and conservation structures hidden
-          inside differential equations.
-        </p>
+  <div class="stats">
+    <div class="stats-box">
+      <div>
+        <h3>Ph.D.</h3>
+        <p>Mathematics</p>
       </div>
-
-      <div class="card">
-        <h3>Doctoral Work</h3>
-        <p>
-          Ph.D. dissertation: Noether Symmetries, Corresponding Conservation Laws and Applications,
-          completed at NUST, Islamabad.
-        </p>
+      <div>
+        <h3>Gold Medalist</h3>
+        <p>M.Phil.</p>
       </div>
-
-      <div class="card">
-        <h3>Recognition</h3>
-        <p>
-          Recipient of the President’s Gold Medal for M.Phil. Mathematics and NUST Special Scholarship
-          for outstanding academic performance.
-        </p>
+      <div>
+        <h3>10+</h3>
+        <p>Publications</p>
+      </div>
+      <div>
+        <h3>8+ Years</h3>
+        <p>Experience</p>
       </div>
     </div>
   </div>
+
 </section>
-
-<section id="research">
-  <div class="container">
-    <div class="section-head">
-      <h2>Research Interests</h2>
-      <p>
-        Core areas of expertise connecting analytical, geometrical and physical aspects of differential equations.
-      </p>
-    </div>
-
-    <div class="pills">
-      <span class="pill">Symmetry Analysis</span>
-      <span class="pill">Lie Point Symmetries</span>
-      <span class="pill">Noether Symmetries</span>
-      <span class="pill">Optimal Systems</span>
-      <span class="pill">Group-Invariant Solutions</span>
-      <span class="pill">Conservation Laws</span>
-      <span class="pill">Geodesic Equations</span>
-      <span class="pill">Fluid Flow</span>
-      <span class="pill">Heat Transfer</span>
-      <span class="pill">Mathematical Physics</span>
-    </div>
-  </div>
-</section>
-
-<section id="experience">
-  <div class="container">
-    <div class="section-head">
-      <h2>Experience & Education</h2>
-      <p>
-        Academic appointments and qualifications in mathematics.
-      </p>
-    </div>
-
-    <div class="timeline">
-      <div class="item">
-        <div class="year">2021–2024</div>
-        <div>
-          <strong>Lecturer, Department of Mathematics, Allama Iqbal Open University</strong>
-          <p>Teaching undergraduate and graduate courses in mathematics; supervising student projects and research.</p>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="year">2016–2020</div>
-        <div>
-          <strong>Temporary Visiting Faculty, School of Natural Sciences, NUST</strong>
-          <p>Taught Linear Algebra, Calculus III, Complex Analysis, Differential Equations for Physicists and Integral Equations.</p>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="year">2013–2019</div>
-        <div>
-          <strong>Ph.D. Mathematics, NUST</strong>
-          <p>Dissertation: Noether Symmetries, Corresponding Conservation Laws and Applications.</p>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="year">2010–2012</div>
-        <div>
-          <strong>M.Phil. Mathematics, NUST</strong>
-          <p>Dissertation on plane symmetric static spacetimes according to their Noether symmetries.</p>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="year">2005–2009</div>
-        <div>
-          <strong>BS Mathematics, COMSATS Institute of Information Technology</strong>
-          <p>Project on unsteady flow and heat transfer due to non-coaxial rotations of a disk and a fluid at infinity.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="publications">
-  <div class="container">
-    <div class="section-head">
-      <h2>Publications</h2>
-      <p>
-        Published, submitted and preprint research contributions in symmetry methods,
-        differential equations and mathematical physics.
-      </p>
-    </div>
-
-    <div class="publication-list">
-
-      <div class="pub">
-        <div class="pub-num">J1</div>
-        <div>
-          <a href="https://www.sciencedirect.com/science/article/pii/S2211379725003869" target="_blank" rel="noopener">
-            <strong>Lie reduced order modeling of unsteady thermosolutal Marangoni magnetohydrodynamic convection conjoined with chemical reaction and heat generation.</strong>
-          </a>
-          <span>Results in Physics, 78, 108492, 2025.</span>
-        </div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-num">J2</div>
-        <div>
-          <a href="https://www.worldscientific.com/doi/10.1142/S0218348X25402492" target="_blank" rel="noopener">
-            <strong>Lie symmetries in nonlinear liquid film flow with heat and mass transfer and variable magnetic field.</strong>
-          </a>
-          <span>Fractals, 33(10), 2540249, 2025.</span>
-        </div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-num">J3</div>
-        <div>
-          <a href="https://www.mdpi.com/2673-4605/23/1/7" target="_blank" rel="noopener">
-            <strong>Lie optimal solutions of heat transfer in a liquid film over an unsteady stretching surface with viscous dissipation and external magnetic field.</strong>
-          </a>
-          <span>Materials Proceedings, 23(1), 7, 2025.</span>
-        </div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-num">J4</div>
-        <div>
-          <a href="https://www.sciencedirect.com/science/article/pii/S0577907322001264" target="_blank" rel="noopener">
-            <strong>One-dimensional optimal system of Lie sub-algebra and analytic solutions for a liquid film fluid flow.</strong>
-          </a>
-          <span>Chinese Journal of Physics, 77, 1–15, 2022.</span>
-        </div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-num">J5</div>
-        <div>
-          <a href="https://www.worldscientific.com/doi/10.1142/S0219887819501354" target="_blank" rel="noopener">
-            <strong>Optimal systems and their group-invariant solutions to geodesic equations.</strong>
-          </a>
-          <span>International Journal of Geometric Methods in Modern Physics, 16, 1950135, 2019.</span>
-        </div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-num">J6</div>
-        <div>
-          <a href="https://www.worldscientific.com/doi/10.1142/S0218271817410061" target="_blank" rel="noopener">
-            <strong>Conservation laws corresponding to the Noether symmetries of the geodetic Lagrangian in spherically symmetric spacetimes.</strong>
-          </a>
-          <span>International Journal of Modern Physics D, 26(5), 1741006, 2017.</span>
-        </div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-num">J7</div>
-        <div>
-          <a href="https://onlinelibrary.wiley.com/doi/10.1155/2017/4384093" target="_blank" rel="noopener">
-            <strong>Geometrical/Physical interpretation of the conserved quantities corresponding to Noether symmetries of plane symmetric spacetimes.</strong>
-          </a>
-          <span>Advances in Mathematical Physics, Article ID 4384093, 2017.</span>
-        </div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-num">J8</div>
-        <div>
-          <a href="https://www.worldscientific.com/doi/abs/10.1142/9789814623995_0294" target="_blank" rel="noopener">
-            <strong>Classification of a class of plane symmetric static spacetimes according to the Noether symmetries.</strong>
-          </a>
-          <span>The Thirteenth Marcel Grossmann Meeting, 1840–1843, 2015.</span>
-        </div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-num">S1</div>
-        <div>
-          <a href="https://scholar.google.com/scholar?q=%22Some+exact+solutions+for+nonlinear+partial+differential+equations+of+double+diffusive+convection+in+an+open+cavity+using+optimal+system+of+Lie+sub-algebra%22" target="_blank" rel="noopener">
-            <strong>Some exact solutions for nonlinear partial differential equations of double diffusive convection in an open cavity using optimal system of Lie sub-algebra.</strong>
-          </a>
-          <span>Submitted.</span>
-        </div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-num">S2</div>
-        <div>
-          <a href="https://scholar.google.com/scholar?q=%22Optimal+system+and+group-invariant+solutions+of+the+nonhomogeneous+Monge-Ampere+equation%22" target="_blank" rel="noopener">
-            <strong>Optimal system and group-invariant solutions of the nonhomogeneous Monge-Ampère equation.</strong>
-          </a>
-          <span>Submitted.</span>
-        </div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-num">S3</div>
-        <div>
-          <a href="https://scholar.google.com/scholar?q=%22Lie+solvable+classes+for+a+squeezing+unsteady+magnetohydrodynamic+Casson+fluid+flow+between+two+parallel+plates%22" target="_blank" rel="noopener">
-            <strong>Lie solvable classes for a squeezing unsteady magnetohydrodynamic Casson fluid flow between two parallel plates under thermal radiation, thermal diffusion and diffusion-thermo effects.</strong>
-          </a>
-          <span>Preprint.</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section id="teaching">
-  <div class="container">
-    <div class="section-head">
-      <h2>Teaching & Skills</h2>
-      <p>
-        Teaching experience and technical competencies supporting research, instruction and academic mentoring.
-      </p>
-    </div>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Teaching</h3>
-        <p>
-          Linear Algebra, Calculus III, Complex Analysis, Differential Equations for Physicists,
-          Integral Equations and graduate mathematics.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Research Skills</h3>
-        <p>
-          Symmetry Analysis, Lie Point Symmetries, Noether Symmetries, Optimal Systems,
-          Group-Invariant Solutions and Conservation Laws.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Tools</h3>
-        <p>
-          LaTeX, Maple, Microsoft Office, symbolic computation, mathematical modeling and academic writing.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="container">
-    <div class="section-head">
-      <h2>Contact & Profiles</h2>
-      <p>
-        For collaboration, academic correspondence and research communication.
-      </p>
-    </div>
-
-    <div class="contact-grid">
-      <div class="card">
-        <h3>Email</h3>
-        <p><a href="mailto:bismah.jamil@gmail.com">bismah.jamil@gmail.com</a></p>
-      </div>
-
-      <div class="card">
-        <h3>Academic Profiles</h3>
-        <p>
-          ORCID: 
-          <a href="https://orcid.org/0000-0001-6652-2870" target="_blank" rel="noopener">
-            0000-0001-6652-2870
-          </a>
-          <br>
-
-          Scopus Author ID:
-          <a href="https://www.scopus.com/authid/detail.uri?authorId=57193835867" target="_blank" rel="noopener">
-            57193835867
-          </a>
-          <br>
-
-          Web of Science Researcher ID:
-          <a href="https://www.webofscience.com/wos/author/record/OMK-5389-2025" target="_blank" rel="noopener">
-            OMK-5389-2025
-          </a>
-          <br>
-
-          Google Scholar:
-          <a href="https://scholar.google.com/citations?hl=en&user=lAAUeN4AAAAJ" target="_blank" rel="noopener">
-            Profile
-          </a>
-        </p>
-
-        <div class="profile-buttons">
-          <a class="pill" href="https://orcid.org/0000-0001-6652-2870" target="_blank" rel="noopener">ORCID</a>
-          <a class="pill" href="https://www.scopus.com/authid/detail.uri?authorId=57193835867" target="_blank" rel="noopener">Scopus</a>
-          <a class="pill" href="https://www.webofscience.com/wos/author/record/OMK-5389-2025" target="_blank" rel="noopener">Web of Science</a>
-          <a class="pill" href="https://scholar.google.com/citations?hl=en&user=lAAUeN4AAAAJ" target="_blank" rel="noopener">Google Scholar</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<footer>
-  © 2026 Dr. Bismah Jamil. Academic Portfolio.
-</footer>
 
 </body>
 </html>
