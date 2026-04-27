@@ -4,69 +4,842 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dr. Bismah Jamil | Academic Portfolio</title>
+
   <meta name="description" content="Academic portfolio of Dr. Bismah Jamil, mathematician working on symmetry analysis, Noether symmetries, Lie symmetries, differential equations, geodesic systems, fluid flow and heat transfer." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+
   <style>
-    :root{
-      --bg:#07110d; --panel:#0d1c17; --panel2:#132a22; --green:#79d39d; --green2:#b9f6ca;
-      --text:#f3fff7; --muted:#b9c9bf; --line:rgba(185,246,202,.18); --gold:#e6c36a;
+    :root {
+      --bg: #050d0a;
+      --bg2: #071510;
+      --panel: rgba(13, 31, 24, 0.88);
+      --panel2: rgba(18, 49, 37, 0.82);
+      --green: #76e0a0;
+      --green2: #baf7cf;
+      --gold: #e6c36a;
+      --text: #f4fff8;
+      --muted: #b8c8be;
+      --line: rgba(186, 247, 207, 0.18);
+      --shadow: 0 25px 80px rgba(0,0,0,.38);
     }
-    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
-    a{color:inherit;text-decoration:none}.container{width:min(1180px,92%);margin:auto}.section{padding:86px 0}.accent{color:var(--green)}
-    nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(7,17,13,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:800;color:var(--green2)}
-    .nav-links{display:flex;gap:24px;font-weight:700;font-size:.92rem}.nav-links a{color:#dce9df}.nav-links a:hover{color:var(--green)}
-    .hero{min-height:100vh;padding-top:72px;display:flex;align-items:stretch;position:relative;overflow:hidden;background:radial-gradient(circle at 20% 20%,rgba(121,211,157,.20),transparent 34%),linear-gradient(135deg,#081510,#0a1712 45%,#07110d)}
-    .hero::before{content:"";position:absolute;inset:72px 0 0;background:linear-gradient(90deg,rgba(3,11,7,.25),rgba(3,11,7,.1)),url('assets/profile.jpg');background-size:0;}
-    .hero-wrap{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center;padding:70px 0 34px}
-    .chalkboard{position:absolute;inset:100px 38% 80px 0;background:linear-gradient(120deg,#123f28,#0e2f20 58%,#082015);border:12px solid #5b3b21;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.45), inset 0 0 80px rgba(255,255,255,.05);opacity:.95}
-    .chalk{position:absolute;color:rgba(240,255,241,.55);font-family:'Playfair Display',serif;font-size:clamp(1rem,2vw,2.1rem);transform:rotate(-2deg);white-space:nowrap}.c1{top:18%;left:6%}.c2{top:31%;left:42%}.c3{top:51%;left:13%}.c4{top:65%;left:45%}.c5{top:76%;left:8%}
-    .hero-copy{position:relative;z-index:2;max-width:680px}.eyebrow{color:var(--green2);font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:.82rem}
-    h1{font-family:'Playfair Display',serif;font-size:clamp(3.1rem,7vw,6.4rem);line-height:.95;margin:18px 0 10px}.subtitle{font-size:clamp(1.15rem,2vw,1.55rem);font-weight:800;color:var(--green);font-style:italic}.lead{font-size:1.08rem;color:#e7f2ea;max-width:620px}
-    .typed{display:inline-block;border-right:3px solid var(--green2);white-space:nowrap;overflow:hidden;max-width:0;animation:typing 5s steps(80,end) forwards,blink .75s step-end infinite}@keyframes typing{to{max-width:100%}}@keyframes blink{50%{border-color:transparent}}
-    .buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}.btn{padding:13px 20px;border-radius:999px;font-weight:800;border:1px solid var(--line);background:rgba(121,211,157,.12)}.btn.primary{background:linear-gradient(135deg,var(--green),#4bbf76);color:#05100b}.btn:hover{transform:translateY(-2px)}
-    .hero-visual{position:relative;z-index:3;min-height:680px;display:flex;align-items:flex-end;justify-content:center}.shelf{position:absolute;right:0;top:20px;width:70%;height:76%;border-radius:18px;background:linear-gradient(90deg,#3b2716,#674326);box-shadow:0 25px 70px rgba(0,0,0,.45);overflow:hidden}.shelf::before{content:"";position:absolute;inset:20px;background:repeating-linear-gradient(90deg,#17243a 0 18px,#9b6a32 18px 30px,#253b2e 30px 52px,#703629 52px 65px);opacity:.85}.shelf::after{content:"";position:absolute;left:0;right:0;top:33%;height:16px;background:#2d1d10;box-shadow:0 210px 0 #2d1d10}
-    .portrait{position:relative;z-index:4;width:min(440px,88%);filter:drop-shadow(0 34px 52px rgba(0,0,0,.55));border-radius:26px;object-fit:cover;object-position:center}.desk{position:absolute;bottom:42px;right:12px;z-index:5;display:flex;gap:8px;align-items:flex-end}.book{width:145px;height:24px;border-radius:4px;background:#1a3d32;border:1px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800}.book:nth-child(2){background:#253b61}.book:nth-child(3){background:#6d2e26}.mug{width:72px;height:72px;border-radius:12px;background:#f2eadb;color:#2e2115;display:grid;place-items:center;text-align:center;font-size:.75rem;font-weight:900;margin-left:8px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{background:linear-gradient(180deg,rgba(19,42,34,.92),rgba(13,28,23,.92));border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:0 18px 50px rgba(0,0,0,.22)}.card h3{margin-top:0;color:var(--green2)}
-    h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.2rem);margin:0 0 12px}.section-intro{color:var(--muted);max-width:780px;margin-bottom:28px}.timeline{display:grid;gap:18px}.item{padding:22px;border-left:4px solid var(--green);background:rgba(255,255,255,.04);border-radius:16px}.item strong{color:#fff}.item span{color:var(--gold);font-weight:800}
-    .pub{display:grid;grid-template-columns:auto 1fr;gap:16px;padding:18px;border-bottom:1px solid var(--line)}.pub:last-child{border-bottom:0}.num{color:var(--green);font-weight:900}.small{color:var(--muted);font-size:.92rem}.pill-row{display:flex;gap:10px;flex-wrap:wrap}.pill{border:1px solid var(--line);border-radius:999px;padding:8px 13px;color:#eaf8ee;background:rgba(121,211,157,.09);font-weight:700;font-size:.9rem}
-    footer{padding:34px;text-align:center;color:var(--muted);border-top:1px solid var(--line)}
-    @media(max-width:900px){.nav-links{display:none}.hero-wrap{grid-template-columns:1fr}.chalkboard{inset:95px 0 45% 0}.hero-visual{min-height:540px}.grid{grid-template-columns:1fr}.typed{white-space:normal}.portrait{width:min(360px,92%)}}
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(118,224,160,.16), transparent 34%),
+        linear-gradient(135deg, var(--bg), var(--bg2));
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
+    }
+
+    .accent {
+      color: var(--green);
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(5,13,10,.78);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-family: "Playfair Display", serif;
+      font-size: 1.35rem;
+      color: var(--gold);
+      font-weight: 900;
+    }
+
+    .brand span {
+      display: block;
+      font-family: Inter, sans-serif;
+      font-size: .78rem;
+      color: var(--green2);
+      font-weight: 600;
+      letter-spacing: .08em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      font-size: .92rem;
+      font-weight: 800;
+    }
+
+    .nav-links a {
+      color: #dbe9df;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 0;
+      height: 2px;
+      background: var(--green);
+      transition: .3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      min-height: 100vh;
+      padding-top: 74px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 74px 0 0;
+      background:
+        linear-gradient(90deg, rgba(5,13,10,.12), rgba(5,13,10,.86)),
+        radial-gradient(circle at 25% 35%, rgba(118,224,160,.18), transparent 28%);
+      pointer-events: none;
+    }
+
+    .hero-wrap {
+      position: relative;
+      min-height: calc(100vh - 74px);
+      display: grid;
+      grid-template-columns: 1.04fr .96fr;
+      gap: 40px;
+      align-items: center;
+      padding: 70px 0 55px;
+    }
+
+    .chalkboard {
+      position: absolute;
+      inset: 92px 36% 92px -3%;
+      border-radius: 22px;
+      background:
+        linear-gradient(120deg, rgba(255,255,255,.04), transparent 25%),
+        linear-gradient(135deg, #16472f, #0c2b1d 58%, #071d14);
+      border: 14px solid #5b3b21;
+      box-shadow:
+        var(--shadow),
+        inset 0 0 90px rgba(255,255,255,.06);
+      opacity: .94;
+    }
+
+    .chalk {
+      position: absolute;
+      color: rgba(240,255,241,.54);
+      font-family: "Playfair Display", serif;
+      white-space: nowrap;
+      text-shadow: 0 0 8px rgba(255,255,255,.1);
+    }
+
+    .c1 { top: 12%; left: 8%; font-size: 1.5rem; transform: rotate(-2deg); }
+    .c2 { top: 25%; left: 48%; font-size: 1.8rem; transform: rotate(2deg); color: rgba(186,247,207,.58); }
+    .c3 { top: 43%; left: 11%; font-size: 1.35rem; }
+    .c4 { top: 61%; left: 44%; font-size: 1.5rem; transform: rotate(-2deg); }
+    .c5 { top: 76%; left: 9%; font-size: 1.25rem; color: rgba(230,195,106,.62); }
+
+    .hero-copy {
+      position: relative;
+      z-index: 5;
+      max-width: 690px;
+    }
+
+    .eyebrow {
+      color: var(--green2);
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: .78rem;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3.3rem, 7vw, 6.7rem);
+      line-height: .94;
+      color: var(--gold);
+      text-shadow: 0 10px 35px rgba(0,0,0,.35);
+      margin-bottom: 18px;
+    }
+
+    .subtitle {
+      font-size: clamp(1.15rem, 2.4vw, 1.7rem);
+      color: var(--green);
+      font-weight: 900;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .typed {
+      display: inline-block;
+      max-width: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid var(--green2);
+      animation: typing 4.7s steps(62,end) forwards, blink .75s step-end infinite;
+    }
+
+    @keyframes typing {
+      to { max-width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    .lead {
+      max-width: 650px;
+      font-size: 1.08rem;
+      color: #e9f5ed;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    .btn {
+      padding: 13px 22px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      font-weight: 900;
+      transition: .3s;
+      box-shadow: 0 12px 30px rgba(0,0,0,.18);
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--green), #3dbb72);
+      color: #05100b;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+    }
+
+    .hero-visual {
+      position: relative;
+      z-index: 4;
+      min-height: 650px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .shelf {
+      position: absolute;
+      right: 0;
+      top: 30px;
+      width: 72%;
+      height: 78%;
+      border-radius: 26px;
+      overflow: hidden;
+      background: linear-gradient(90deg, #2d1d12, #6b4528);
+      box-shadow: var(--shadow);
+      opacity: .9;
+    }
+
+    .shelf::before {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      background:
+        repeating-linear-gradient(
+          90deg,
+          #17243a 0 18px,
+          #9b6a32 18px 32px,
+          #24402e 32px 56px,
+          #703629 56px 72px,
+          #d0a94e 72px 78px
+        );
+      opacity: .85;
+    }
+
+    .shelf::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 34%;
+      height: 16px;
+      background: #2b1b10;
+      box-shadow: 0 205px 0 #2b1b10;
+    }
+
+    .portrait {
+      position: relative;
+      z-index: 6;
+      width: min(430px, 88%);
+      max-height: 650px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 30px;
+      filter: drop-shadow(0 35px 55px rgba(0,0,0,.58));
+    }
+
+    .desk {
+      position: absolute;
+      right: 2%;
+      bottom: 38px;
+      z-index: 7;
+      display: flex;
+      align-items: flex-end;
+      gap: 12px;
+    }
+
+    .book {
+      width: 170px;
+      height: 28px;
+      border-radius: 5px;
+      border: 1px solid rgba(255,255,255,.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .75rem;
+      font-weight: 900;
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(0,0,0,.25);
+    }
+
+    .book:nth-child(1) { background: #173f32; }
+    .book:nth-child(2) { background: #243b61; }
+    .book:nth-child(3) { background: #6d2e26; }
+
+    .mug {
+      width: 76px;
+      height: 76px;
+      border-radius: 14px;
+      background: #efe6d5;
+      color: #2f2115;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-size: .72rem;
+      font-weight: 900;
+      box-shadow: 0 10px 25px rgba(0,0,0,.3);
+    }
+
+    .section {
+      padding: 92px 0;
+    }
+
+    h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      margin-bottom: 14px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 800px;
+      margin-bottom: 34px;
+      font-size: 1.05rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background:
+        linear-gradient(180deg, rgba(19,49,37,.92), rgba(8,22,17,.88));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 20px 55px rgba(0,0,0,.22);
+      transition: .35s;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(118,224,160,.45);
+    }
+
+    .card h3 {
+      color: var(--green2);
+      margin-bottom: 12px;
+      font-size: 1.13rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .pill {
+      padding: 9px 15px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(118,224,160,.1);
+      color: #eaffef;
+      font-weight: 800;
+      font-size: .9rem;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+
+    .item {
+      border-left: 4px solid var(--green);
+      background: rgba(255,255,255,.045);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.16);
+    }
+
+    .item span {
+      color: var(--gold);
+      font-weight: 900;
+    }
+
+    .item strong {
+      color: #fff;
+    }
+
+    .pub {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .pub:last-child {
+      border-bottom: 0;
+    }
+
+    .num {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: rgba(118,224,160,.12);
+      display: grid;
+      place-items: center;
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 22px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 35px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 920px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .chalkboard {
+        inset: 92px 0 48% 0;
+      }
+
+      .hero-visual {
+        min-height: 540px;
+      }
+
+      .grid,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .typed {
+        white-space: normal;
+      }
+
+      .portrait {
+        width: min(360px, 92%);
+      }
+
+      .desk {
+        right: 0;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <nav><div class="container nav-inner"><a class="brand" href="#home">Dr. Bismah Jamil</a><div class="nav-links"><a href="#about">About</a><a href="#research">Research</a><a href="#publications">Publications</a><a href="#teaching">Teaching</a><a href="#contact">Contact</a></div></div></nav>
+
+  <nav>
+    <div class="container nav-inner">
+      <a class="brand" href="#home">
+        Dr. Bismah Jamil
+        <span>Mathematician | Researcher | Educator</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
 
   <header class="hero" id="home">
     <div class="container hero-wrap">
-      <div class="chalkboard"><div class="chalk c1">X = ξ(x,y)∂x + η(x,y)∂y</div><div class="chalk c2">Noether Symmetries</div><div class="chalk c3">L_X L + L D_i ξ^i = D_i B^i</div><div class="chalk c4">u_t + uu_x = νu_{xx}</div><div class="chalk c5">Lie Symmetries · Conservation Laws · Geodesics</div></div>
-      <div class="hero-copy">
-        <div class="eyebrow">Mathematician · Symmetry Analysis · Differential Equations</div>
-        <h1>Dr. Bismah Jamil</h1>
-        <div class="subtitle"><span class="typed">Symmetry methods for solving differential equations.</span></div>
-        <p class="lead">I study symmetry analysis, Noether symmetries, Lie point symmetries, optimal systems, conservation laws, and group-invariant solutions, with applications to geodesic systems, fluid flow, heat transfer, and mathematical physics.</p>
-        <div class="buttons"><a class="btn primary" href="#publications">View Publications</a><a class="btn" href="#contact">Contact</a></div>
+
+      <div class="chalkboard">
+        <div class="chalk c1">X = ξ(x,y)∂x + η(x,y)∂y</div>
+        <div class="chalk c2">Noether Symmetries</div>
+        <div class="chalk c3">L<sub>X</sub>L + LD<sub>i</sub>ξ<sup>i</sup> = D<sub>i</sub>B<sup>i</sup></div>
+        <div class="chalk c4">u<sub>t</sub> + uu<sub>x</sub> = νu<sub>xx</sub></div>
+        <div class="chalk c5">Lie Symmetries · Conservation Laws · Geodesics</div>
       </div>
-      <div class="hero-visual"><div class="shelf"></div><img class="portrait" src="assets/profile.jpg" alt="Dr. Bismah Jamil"><div class="desk"><div><div class="book">Differential Equations</div><div class="book">Symmetry Analysis</div><div class="book">Noether Methods</div></div><div class="mug">Math<br>Coffee</div></div></div>
+
+      <div class="hero-copy">
+        <div class="eyebrow">Symmetry Analysis · Differential Equations · Mathematical Physics</div>
+
+        <h1>Dr. Bismah Jamil</h1>
+
+        <div class="subtitle">
+          <span class="typed">Symmetry methods for solving differential equations.</span>
+        </div>
+
+        <p class="lead">
+          I explore symmetry analysis as a powerful method for finding exact solutions of differential equations,
+          with applications in geodesic systems, fluid flow, heat transfer, conservation laws and mathematical physics.
+        </p>
+
+        <div class="buttons">
+          <a class="btn primary" href="#publications">View Publications</a>
+          <a class="btn" href="#research">Research Areas</a>
+          <a class="btn" href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="shelf"></div>
+
+        <img class="portrait" src="profile.jpg" alt="Dr. Bismah Jamil">
+
+        <div class="desk">
+          <div>
+            <div class="book">Differential Equations</div>
+            <div class="book">Symmetry Analysis</div>
+            <div class="book">Noether Methods</div>
+          </div>
+          <div class="mug">Math<br>Coffee</div>
+        </div>
+      </div>
+
     </div>
   </header>
 
   <main>
-    <section class="section" id="about"><div class="container"><h2>About <span class="accent">Me</span></h2><p class="section-intro">My research explores symmetry analysis as a powerful method for finding exact solutions of differential equations and understanding conservation laws in geometry and mathematical physics.</p><div class="grid"><div class="card"><h3>Academic Background</h3><p><b>Ph.D. Mathematics</b>, National University of Sciences and Technology, Islamabad. Dissertation: <i>Noether Symmetries, Corresponding Conservation Laws and Applications</i>.</p></div><div class="card"><h3>Research Focus</h3><p>Lie point symmetries, Noether symmetries, optimal systems, group-invariant solutions, geodesic equations, conservation laws, heat transfer and fluid flow.</p></div><div class="card"><h3>Recognition</h3><p>President’s Gold Medal for M.Phil. Mathematics at NUST and NUST Special Scholarship for outstanding graduate performance.</p></div></div></div></section>
 
-    <section class="section" id="research"><div class="container"><h2>Research <span class="accent">Interests</span></h2><div class="pill-row"><span class="pill">Symmetry Analysis</span><span class="pill">Lie Point Symmetries</span><span class="pill">Noether Symmetries</span><span class="pill">Optimal Systems</span><span class="pill">Group-Invariant Solutions</span><span class="pill">Geodesic Equations</span><span class="pill">Fluid Flow</span><span class="pill">Heat Transfer</span></div></div></section>
+    <section class="section" id="about">
+      <div class="container">
+        <h2>About <span class="accent">Me</span></h2>
+        <p class="section-intro">
+          My research explores the fascinating world of symmetry analysis, a dynamic approach that unlocks exact
+          solutions to differential equations and finds real-world applications in geodesic systems, fluid flow,
+          and heat transfer.
+        </p>
 
-    <section class="section" id="experience"><div class="container"><h2>Experience & <span class="accent">Education</span></h2><div class="timeline"><div class="item"><span>2021–2024</span><br><strong>Lecturer, Department of Mathematics, Allama Iqbal Open University</strong><br>Teaching undergraduate and graduate mathematics courses; supervising student projects and research.</div><div class="item"><span>2016–2020</span><br><strong>Temporary Visiting Faculty, School of Natural Sciences, NUST</strong><br>Taught Linear Algebra, Calculus III, Complex Analysis, Differential Equations for Physicists, and Integral Equations.</div><div class="item"><span>2013–2019</span><br><strong>Ph.D. Mathematics, NUST</strong><br>Advisor: Dr. Tooba Feroze; Co-Advisor: Dr. Andrés Vargas.</div><div class="item"><span>2010–2012</span><br><strong>M.Phil. Mathematics, NUST</strong><br>Dissertation on plane symmetric static spacetimes and Noether symmetries.</div></div></div></section>
+        <div class="grid">
+          <div class="card">
+            <h3>Academic Background</h3>
+            <p>
+              Ph.D. in Mathematics from the School of Natural Sciences, National University of Sciences and Technology,
+              Islamabad.
+            </p>
+          </div>
 
-    <section class="section" id="publications"><div class="container"><h2>Selected <span class="accent">Publications</span></h2><div class="card"><div class="pub"><div class="num">01</div><div><b>Lie reduced order modeling of unsteady thermosolutal Marangoni magnetohydrodynamic convection conjoined with chemical reaction and heat generation.</b><br><span class="small">Results in Physics, 2025.</span></div></div><div class="pub"><div class="num">02</div><div><b>Lie symmetries in nonlinear liquid film flow with heat and mass transfer and variable magnetic field.</b><br><span class="small">Fractals, 2025.</span></div></div><div class="pub"><div class="num">03</div><div><b>One-dimensional optimal system of Lie sub-algebra and analytic solutions for a liquid film fluid flow.</b><br><span class="small">Chinese Journal of Physics, 2022.</span></div></div><div class="pub"><div class="num">04</div><div><b>Optimal systems and their group-invariant solutions to geodesic equations.</b><br><span class="small">International Journal of Geometric Methods in Modern Physics, 2019.</span></div></div><div class="pub"><div class="num">05</div><div><b>Conservation laws corresponding to the Noether symmetries of the geodetic Lagrangian in spherically symmetric spacetimes.</b><br><span class="small">International Journal of Modern Physics D, 2017.</span></div></div><div class="pub"><div class="num">06</div><div><b>Geometrical/Physical interpretation of conserved quantities corresponding to Noether symmetries of plane symmetric spacetimes.</b><br><span class="small">Advances in Mathematical Physics, 2017.</span></div></div></div></div></section>
+          <div class="card">
+            <h3>Research Identity</h3>
+            <p>
+              Symmetry analysis, Lie point symmetries, Noether symmetries, optimal systems, conservation laws and
+              group-invariant solutions.
+            </p>
+          </div>
 
-    <section class="section" id="teaching"><div class="container"><h2>Teaching & <span class="accent">Skills</span></h2><div class="grid"><div class="card"><h3>Teaching</h3><p>Linear Algebra, Calculus III, Complex Analysis, Differential Equations for Physicists, Integral Equations, undergraduate and graduate mathematics.</p></div><div class="card"><h3>Tools</h3><p>LaTeX, Maple, Microsoft Office, mathematical modeling, symbolic computation and academic writing.</p></div><div class="card"><h3>Research Mentoring</h3><p>Supervising student projects and guiding research journeys in symmetry methods and differential equations.</p></div></div></div></section>
+          <div class="card">
+            <h3>Academic Recognition</h3>
+            <p>
+              President’s Gold Medal for M.Phil. Mathematics and NUST Special Scholarship for outstanding graduate
+              performance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <section class="section" id="contact"><div class="container"><h2>Contact & <span class="accent">Profiles</span></h2><div class="grid"><div class="card"><h3>Email</h3><p><a href="mailto:bismah.jamil@gmail.com">bismah.jamil@gmail.com</a></p></div><div class="card"><h3>Research IDs</h3><p>ORCID: 0000-0001-6652-2870<br>Scopus Author ID: 57193835867<br>Web of Science Researcher ID: OMK-5389-2025</p></div><div class="card"><h3>Scholar</h3><p><a href="#">Add Google Scholar profile link here</a></p></div></div></div></section>
+    <section class="section" id="research">
+      <div class="container">
+        <h2>Research <span class="accent">Interests</span></h2>
+        <p class="section-intro">
+          My work connects geometry, mathematical physics and analytical methods for differential equations.
+        </p>
+
+        <div class="pill-row">
+          <span class="pill">Symmetry Analysis</span>
+          <span class="pill">Lie Point Symmetries</span>
+          <span class="pill">Noether Symmetries</span>
+          <span class="pill">Optimal Systems</span>
+          <span class="pill">Group-Invariant Solutions</span>
+          <span class="pill">Conservation Laws</span>
+          <span class="pill">Geodesic Equations</span>
+          <span class="pill">Fluid Flow</span>
+          <span class="pill">Heat Transfer</span>
+          <span class="pill">Mathematical Physics</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <h2>Experience & <span class="accent">Education</span></h2>
+
+        <div class="timeline">
+          <div class="item">
+            <span>2021–2024</span><br>
+            <strong>Lecturer, Department of Mathematics, Allama Iqbal Open University</strong><br>
+            Teaching undergraduate and graduate mathematics courses; supervising student projects and research.
+          </div>
+
+          <div class="item">
+            <span>2016–2020</span><br>
+            <strong>Temporary Visiting Faculty, School of Natural Sciences, NUST</strong><br>
+            Taught Linear Algebra, Calculus III, Complex Analysis, Differential Equations for Physicists and Integral Equations.
+          </div>
+
+          <div class="item">
+            <span>2013–2019</span><br>
+            <strong>Ph.D. Mathematics, NUST</strong><br>
+            Dissertation: <em>Noether Symmetries, Corresponding Conservation Laws and Applications</em>.
+          </div>
+
+          <div class="item">
+            <span>2010–2012</span><br>
+            <strong>M.Phil. Mathematics, NUST</strong><br>
+            Dissertation on plane symmetric static spacetimes and Noether symmetries.
+          </div>
+
+          <div class="item">
+            <span>2005–2009</span><br>
+            <strong>BS Mathematics, COMSATS Institute of Information Technology</strong><br>
+            Project on unsteady flow and heat transfer due to non-coaxial rotations of a disk and a fluid at infinity.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="publications">
+      <div class="container">
+        <h2>Selected <span class="accent">Publications</span></h2>
+
+        <div class="card">
+          <div class="pub">
+            <div class="num">01</div>
+            <div>
+              <strong>Lie reduced order modeling of unsteady thermosolutal Marangoni magnetohydrodynamic convection conjoined with chemical reaction and heat generation.</strong><br>
+              <span class="small">Results in Physics, 2025.</span>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="num">02</div>
+            <div>
+              <strong>Lie symmetries in nonlinear liquid film flow with heat and mass transfer and variable magnetic field.</strong><br>
+              <span class="small">Fractals, 2025.</span>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="num">03</div>
+            <div>
+              <strong>Lie optimal solutions of heat transfer in a liquid film over an unsteady stretching surface with viscous dissipation and external magnetic field.</strong><br>
+              <span class="small">Materials Proceedings, 2025.</span>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="num">04</div>
+            <div>
+              <strong>One-dimensional optimal system of Lie sub-algebra and analytic solutions for a liquid film fluid flow.</strong><br>
+              <span class="small">Chinese Journal of Physics, 2022.</span>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="num">05</div>
+            <div>
+              <strong>Optimal systems and their group-invariant solutions to geodesic equations.</strong><br>
+              <span class="small">International Journal of Geometric Methods in Modern Physics, 2019.</span>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="num">06</div>
+            <div>
+              <strong>Conservation laws corresponding to the Noether symmetries of the geodetic Lagrangian in spherically symmetric spacetimes.</strong><br>
+              <span class="small">International Journal of Modern Physics D, 2017.</span>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="num">07</div>
+            <div>
+              <strong>Geometrical/Physical interpretation of conserved quantities corresponding to Noether symmetries of plane symmetric spacetimes.</strong><br>
+              <span class="small">Advances in Mathematical Physics, 2017.</span>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="num">08</div>
+            <div>
+              <strong>Classification of a class of plane symmetric static spacetimes according to the Noether symmetries.</strong><br>
+              <span class="small">The Thirteenth Marcel Grossmann Meeting, 2015.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="teaching">
+      <div class="container">
+        <h2>Teaching & <span class="accent">Skills</span></h2>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Teaching Areas</h3>
+            <p>
+              Linear Algebra, Calculus III, Complex Analysis, Differential Equations for Physicists,
+              Integral Equations, undergraduate and graduate mathematics.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Research Skills</h3>
+            <p>
+              Symmetry Analysis, Lie Point Symmetries, Noether Symmetries, Optimal Systems and Group-Invariant Solutions.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Technical Tools</h3>
+            <p>
+              LaTeX, Maple, Microsoft Office, mathematical modeling, symbolic computation and academic writing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <h2>Contact & <span class="accent">Research Profiles</span></h2>
+
+        <div class="two-col">
+          <div class="card">
+            <h3>Email</h3>
+            <p>
+              <a href="mailto:bismah.jamil@gmail.com">bismah.jamil@gmail.com</a>
+            </p>
+
+            <br>
+
+            <h3>Research IDs</h3>
+            <p>
+              ORCID: 0000-0001-6652-2870<br>
+              Scopus Author ID: 57193835867<br>
+              Web of Science Researcher ID: OMK-5389-2025
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Academic Statement</h3>
+            <p>
+              Driven by curiosity and enthusiasm, I am eager to collaborate and make meaningful contributions within
+              the academic community through research, teaching and mentoring.
+            </p>
+
+            <br>
+
+            <div class="pill-row">
+              <a class="pill" href="#">Google Scholar</a>
+              <a class="pill" href="#">ORCID</a>
+              <a class="pill" href="#">Scopus</a>
+              <a class="pill" href="#">Web of Science</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer>© 2026 Dr. Bismah Jamil. Academic Portfolio.</footer>
+  <footer>
+    © 2026 Dr. Bismah Jamil. Academic Portfolio.
+  </footer>
+
 </body>
 </html>
