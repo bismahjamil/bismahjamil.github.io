@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Bismah Jamil | Academic Portfolio</title>
+  <meta name="description" content="Academic portfolio of Dr. Bismah Jamil, mathematician working on symmetry analysis, Noether symmetries, Lie symmetries, differential equations, geodesic systems, fluid flow and heat transfer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#07110d; --panel:#0d1c17; --panel2:#132a22; --green:#79d39d; --green2:#b9f6ca;
+      --text:#f3fff7; --muted:#b9c9bf; --line:rgba(185,246,202,.18); --gold:#e6c36a;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+    a{color:inherit;text-decoration:none}.container{width:min(1180px,92%);margin:auto}.section{padding:86px 0}.accent{color:var(--green)}
+    nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(7,17,13,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:800;color:var(--green2)}
+    .nav-links{display:flex;gap:24px;font-weight:700;font-size:.92rem}.nav-links a{color:#dce9df}.nav-links a:hover{color:var(--green)}
+    .hero{min-height:100vh;padding-top:72px;display:flex;align-items:stretch;position:relative;overflow:hidden;background:radial-gradient(circle at 20% 20%,rgba(121,211,157,.20),transparent 34%),linear-gradient(135deg,#081510,#0a1712 45%,#07110d)}
+    .hero::before{content:"";position:absolute;inset:72px 0 0;background:linear-gradient(90deg,rgba(3,11,7,.25),rgba(3,11,7,.1)),url('assets/profile.jpg');background-size:0;}
+    .hero-wrap{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center;padding:70px 0 34px}
+    .chalkboard{position:absolute;inset:100px 38% 80px 0;background:linear-gradient(120deg,#123f28,#0e2f20 58%,#082015);border:12px solid #5b3b21;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.45), inset 0 0 80px rgba(255,255,255,.05);opacity:.95}
+    .chalk{position:absolute;color:rgba(240,255,241,.55);font-family:'Playfair Display',serif;font-size:clamp(1rem,2vw,2.1rem);transform:rotate(-2deg);white-space:nowrap}.c1{top:18%;left:6%}.c2{top:31%;left:42%}.c3{top:51%;left:13%}.c4{top:65%;left:45%}.c5{top:76%;left:8%}
+    .hero-copy{position:relative;z-index:2;max-width:680px}.eyebrow{color:var(--green2);font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:.82rem}
+    h1{font-family:'Playfair Display',serif;font-size:clamp(3.1rem,7vw,6.4rem);line-height:.95;margin:18px 0 10px}.subtitle{font-size:clamp(1.15rem,2vw,1.55rem);font-weight:800;color:var(--green);font-style:italic}.lead{font-size:1.08rem;color:#e7f2ea;max-width:620px}
+    .typed{display:inline-block;border-right:3px solid var(--green2);white-space:nowrap;overflow:hidden;max-width:0;animation:typing 5s steps(80,end) forwards,blink .75s step-end infinite}@keyframes typing{to{max-width:100%}}@keyframes blink{50%{border-color:transparent}}
+    .buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}.btn{padding:13px 20px;border-radius:999px;font-weight:800;border:1px solid var(--line);background:rgba(121,211,157,.12)}.btn.primary{background:linear-gradient(135deg,var(--green),#4bbf76);color:#05100b}.btn:hover{transform:translateY(-2px)}
+    .hero-visual{position:relative;z-index:3;min-height:680px;display:flex;align-items:flex-end;justify-content:center}.shelf{position:absolute;right:0;top:20px;width:70%;height:76%;border-radius:18px;background:linear-gradient(90deg,#3b2716,#674326);box-shadow:0 25px 70px rgba(0,0,0,.45);overflow:hidden}.shelf::before{content:"";position:absolute;inset:20px;background:repeating-linear-gradient(90deg,#17243a 0 18px,#9b6a32 18px 30px,#253b2e 30px 52px,#703629 52px 65px);opacity:.85}.shelf::after{content:"";position:absolute;left:0;right:0;top:33%;height:16px;background:#2d1d10;box-shadow:0 210px 0 #2d1d10}
+    .portrait{position:relative;z-index:4;width:min(440px,88%);filter:drop-shadow(0 34px 52px rgba(0,0,0,.55));border-radius:26px;object-fit:cover;object-position:center}.desk{position:absolute;bottom:42px;right:12px;z-index:5;display:flex;gap:8px;align-items:flex-end}.book{width:145px;height:24px;border-radius:4px;background:#1a3d32;border:1px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800}.book:nth-child(2){background:#253b61}.book:nth-child(3){background:#6d2e26}.mug{width:72px;height:72px;border-radius:12px;background:#f2eadb;color:#2e2115;display:grid;place-items:center;text-align:center;font-size:.75rem;font-weight:900;margin-left:8px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{background:linear-gradient(180deg,rgba(19,42,34,.92),rgba(13,28,23,.92));border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:0 18px 50px rgba(0,0,0,.22)}.card h3{margin-top:0;color:var(--green2)}
+    h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.2rem);margin:0 0 12px}.section-intro{color:var(--muted);max-width:780px;margin-bottom:28px}.timeline{display:grid;gap:18px}.item{padding:22px;border-left:4px solid var(--green);background:rgba(255,255,255,.04);border-radius:16px}.item strong{color:#fff}.item span{color:var(--gold);font-weight:800}
+    .pub{display:grid;grid-template-columns:auto 1fr;gap:16px;padding:18px;border-bottom:1px solid var(--line)}.pub:last-child{border-bottom:0}.num{color:var(--green);font-weight:900}.small{color:var(--muted);font-size:.92rem}.pill-row{display:flex;gap:10px;flex-wrap:wrap}.pill{border:1px solid var(--line);border-radius:999px;padding:8px 13px;color:#eaf8ee;background:rgba(121,211,157,.09);font-weight:700;font-size:.9rem}
+    footer{padding:34px;text-align:center;color:var(--muted);border-top:1px solid var(--line)}
+    @media(max-width:900px){.nav-links{display:none}.hero-wrap{grid-template-columns:1fr}.chalkboard{inset:95px 0 45% 0}.hero-visual{min-height:540px}.grid{grid-template-columns:1fr}.typed{white-space:normal}.portrait{width:min(360px,92%)}}
+  </style>
+</head>
+<body>
+  <nav><div class="container nav-inner"><a class="brand" href="#home">Dr. Bismah Jamil</a><div class="nav-links"><a href="#about">About</a><a href="#research">Research</a><a href="#publications">Publications</a><a href="#teaching">Teaching</a><a href="#contact">Contact</a></div></div></nav>
+
+  <header class="hero" id="home">
+    <div class="container hero-wrap">
+      <div class="chalkboard"><div class="chalk c1">X = ξ(x,y)∂x + η(x,y)∂y</div><div class="chalk c2">Noether Symmetries</div><div class="chalk c3">L_X L + L D_i ξ^i = D_i B^i</div><div class="chalk c4">u_t + uu_x = νu_{xx}</div><div class="chalk c5">Lie Symmetries · Conservation Laws · Geodesics</div></div>
+      <div class="hero-copy">
+        <div class="eyebrow">Mathematician · Symmetry Analysis · Differential Equations</div>
+        <h1>Dr. Bismah Jamil</h1>
+        <div class="subtitle"><span class="typed">Symmetry methods for solving differential equations.</span></div>
+        <p class="lead">I study symmetry analysis, Noether symmetries, Lie point symmetries, optimal systems, conservation laws, and group-invariant solutions, with applications to geodesic systems, fluid flow, heat transfer, and mathematical physics.</p>
+        <div class="buttons"><a class="btn primary" href="#publications">View Publications</a><a class="btn" href="#contact">Contact</a></div>
+      </div>
+      <div class="hero-visual"><div class="shelf"></div><img class="portrait" src="assets/profile.jpg" alt="Dr. Bismah Jamil"><div class="desk"><div><div class="book">Differential Equations</div><div class="book">Symmetry Analysis</div><div class="book">Noether Methods</div></div><div class="mug">Math<br>Coffee</div></div></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="about"><div class="container"><h2>About <span class="accent">Me</span></h2><p class="section-intro">My research explores symmetry analysis as a powerful method for finding exact solutions of differential equations and understanding conservation laws in geometry and mathematical physics.</p><div class="grid"><div class="card"><h3>Academic Background</h3><p><b>Ph.D. Mathematics</b>, National University of Sciences and Technology, Islamabad. Dissertation: <i>Noether Symmetries, Corresponding Conservation Laws and Applications</i>.</p></div><div class="card"><h3>Research Focus</h3><p>Lie point symmetries, Noether symmetries, optimal systems, group-invariant solutions, geodesic equations, conservation laws, heat transfer and fluid flow.</p></div><div class="card"><h3>Recognition</h3><p>President’s Gold Medal for M.Phil. Mathematics at NUST and NUST Special Scholarship for outstanding graduate performance.</p></div></div></div></section>
+
+    <section class="section" id="research"><div class="container"><h2>Research <span class="accent">Interests</span></h2><div class="pill-row"><span class="pill">Symmetry Analysis</span><span class="pill">Lie Point Symmetries</span><span class="pill">Noether Symmetries</span><span class="pill">Optimal Systems</span><span class="pill">Group-Invariant Solutions</span><span class="pill">Geodesic Equations</span><span class="pill">Fluid Flow</span><span class="pill">Heat Transfer</span></div></div></section>
+
+    <section class="section" id="experience"><div class="container"><h2>Experience & <span class="accent">Education</span></h2><div class="timeline"><div class="item"><span>2021–2024</span><br><strong>Lecturer, Department of Mathematics, Allama Iqbal Open University</strong><br>Teaching undergraduate and graduate mathematics courses; supervising student projects and research.</div><div class="item"><span>2016–2020</span><br><strong>Temporary Visiting Faculty, School of Natural Sciences, NUST</strong><br>Taught Linear Algebra, Calculus III, Complex Analysis, Differential Equations for Physicists, and Integral Equations.</div><div class="item"><span>2013–2019</span><br><strong>Ph.D. Mathematics, NUST</strong><br>Advisor: Dr. Tooba Feroze; Co-Advisor: Dr. Andrés Vargas.</div><div class="item"><span>2010–2012</span><br><strong>M.Phil. Mathematics, NUST</strong><br>Dissertation on plane symmetric static spacetimes and Noether symmetries.</div></div></div></section>
+
+    <section class="section" id="publications"><div class="container"><h2>Selected <span class="accent">Publications</span></h2><div class="card"><div class="pub"><div class="num">01</div><div><b>Lie reduced order modeling of unsteady thermosolutal Marangoni magnetohydrodynamic convection conjoined with chemical reaction and heat generation.</b><br><span class="small">Results in Physics, 2025.</span></div></div><div class="pub"><div class="num">02</div><div><b>Lie symmetries in nonlinear liquid film flow with heat and mass transfer and variable magnetic field.</b><br><span class="small">Fractals, 2025.</span></div></div><div class="pub"><div class="num">03</div><div><b>One-dimensional optimal system of Lie sub-algebra and analytic solutions for a liquid film fluid flow.</b><br><span class="small">Chinese Journal of Physics, 2022.</span></div></div><div class="pub"><div class="num">04</div><div><b>Optimal systems and their group-invariant solutions to geodesic equations.</b><br><span class="small">International Journal of Geometric Methods in Modern Physics, 2019.</span></div></div><div class="pub"><div class="num">05</div><div><b>Conservation laws corresponding to the Noether symmetries of the geodetic Lagrangian in spherically symmetric spacetimes.</b><br><span class="small">International Journal of Modern Physics D, 2017.</span></div></div><div class="pub"><div class="num">06</div><div><b>Geometrical/Physical interpretation of conserved quantities corresponding to Noether symmetries of plane symmetric spacetimes.</b><br><span class="small">Advances in Mathematical Physics, 2017.</span></div></div></div></div></section>
+
+    <section class="section" id="teaching"><div class="container"><h2>Teaching & <span class="accent">Skills</span></h2><div class="grid"><div class="card"><h3>Teaching</h3><p>Linear Algebra, Calculus III, Complex Analysis, Differential Equations for Physicists, Integral Equations, undergraduate and graduate mathematics.</p></div><div class="card"><h3>Tools</h3><p>LaTeX, Maple, Microsoft Office, mathematical modeling, symbolic computation and academic writing.</p></div><div class="card"><h3>Research Mentoring</h3><p>Supervising student projects and guiding research journeys in symmetry methods and differential equations.</p></div></div></div></section>
+
+    <section class="section" id="contact"><div class="container"><h2>Contact & <span class="accent">Profiles</span></h2><div class="grid"><div class="card"><h3>Email</h3><p><a href="mailto:bismah.jamil@gmail.com">bismah.jamil@gmail.com</a></p></div><div class="card"><h3>Research IDs</h3><p>ORCID: 0000-0001-6652-2870<br>Scopus Author ID: 57193835867<br>Web of Science Researcher ID: OMK-5389-2025</p></div><div class="card"><h3>Scholar</h3><p><a href="#">Add Google Scholar profile link here</a></p></div></div></div></section>
+  </main>
+
+  <footer>© 2026 Dr. Bismah Jamil. Academic Portfolio.</footer>
+</body>
+</html>
