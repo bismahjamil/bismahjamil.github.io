@@ -1,190 +1,664 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dr. Bismah Jamil | Academic Portfolio</title>
 
-<title>Dr. Bismah Jamil</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
-body{
-  margin:0;
-  font-family:Inter;
-  background:#02120d;
-  color:white;
+:root{
+  --bg:#020806;
+  --emerald:#06251b;
+  --emerald2:#0b3b2b;
+  --gold:#d6b56d;
+  --gold2:#f0d99a;
+  --text:#f7fff9;
+  --muted:#b6c7bd;
+  --line:rgba(214,181,109,.25);
+  --shadow:0 30px 80px rgba(0,0,0,.45);
 }
 
-/* NAVBAR */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,sans-serif;
+  background:linear-gradient(135deg,#020806,#06120e,#030907);
+  color:var(--text);
+  line-height:1.7;
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin:auto}
+
 nav{
   position:fixed;
-  width:100%;
-  background:rgba(0,0,0,0.6);
-  backdrop-filter:blur(10px);
+  top:0;left:0;right:0;
+  z-index:1000;
+  background:rgba(2,8,6,.82);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  height:78px;
   display:flex;
   justify-content:space-between;
-  padding:18px 60px;
-  z-index:100;
-}
-
-nav a{
-  color:#d6c08c;
-  margin-left:30px;
-  text-decoration:none;
-  font-weight:600;
-}
-
-/* HERO */
-.hero{
-  height:100vh;
-  display:flex;
   align-items:center;
-  padding:0 60px;
+}
+.logo{
+  font-family:"Cormorant Garamond",serif;
+  font-size:1.9rem;
+  color:var(--gold2);
+  font-weight:700;
+}
+.links{display:flex;gap:25px;font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.links a:hover{color:var(--gold2)}
+
+.hero{
+  min-height:100vh;
+  padding-top:78px;
   background:
-    linear-gradient(to right, rgba(0,0,0,0.8) 40%, transparent),
-    url("bg.jpg") right/cover no-repeat;
+    linear-gradient(90deg,rgba(2,8,6,.92) 0%,rgba(2,8,6,.7) 45%,rgba(2,8,6,.25)),
+    radial-gradient(circle at 75% 25%,rgba(214,181,109,.18),transparent 28%),
+    radial-gradient(circle at 20% 15%,rgba(15,92,67,.4),transparent 30%);
+  display:grid;
+  align-items:center;
+  overflow:hidden;
 }
-
-/* LEFT TEXT */
-.hero-left{
-  width:50%;
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:50px;
+  align-items:center;
+  padding:70px 0 40px;
 }
-
-.hero-left h1{
-  font-family:"Playfair Display";
-  font-size:90px;
-  line-height:0.9;
+.badge{
+  display:inline-block;
+  color:var(--gold2);
+  border:1px solid var(--line);
+  padding:9px 16px;
+  border-radius:999px;
+  font-size:.78rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  margin-bottom:24px;
 }
-
-.hero-left span{
-  color:#d6b56d;
+h1{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(4rem,8vw,7.5rem);
+  line-height:.86;
+  color:#fffdf2;
+  margin-bottom:22px;
 }
-
-.hero-left p{
-  margin-top:20px;
-  font-size:18px;
-  color:#ddd;
+h1 span{color:var(--gold2)}
+.title{
+  font-size:1.45rem;
+  color:var(--gold2);
+  font-weight:700;
+  margin-bottom:22px;
 }
-
-/* BUTTONS */
-.buttons{
-  margin-top:30px;
+.lead{
+  max-width:660px;
+  color:#dce9e1;
+  font-size:1.08rem;
+  margin-bottom:32px;
 }
-
+.actions{display:flex;gap:14px;flex-wrap:wrap}
 .btn{
-  padding:14px 25px;
-  border-radius:8px;
-  border:1px solid #d6b56d;
-  margin-right:15px;
-  cursor:pointer;
+  padding:14px 22px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  font-weight:800;
+  transition:.3s;
 }
-
-.btn.gold{
-  background:#d6b56d;
-  color:black;
+.btn.primary{
+  background:linear-gradient(135deg,var(--gold2),var(--gold));
+  color:#08130e;
 }
+.btn:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
 
-/* RIGHT IMAGE */
-.hero-right{
-  width:50%;
+.visual{
+  min-height:650px;
   display:flex;
-  justify-content:center;
   align-items:flex-end;
-}
-
-.hero-right img{
-  height:90%;
-  object-fit:contain;
-  filter:drop-shadow(0 20px 40px black);
-}
-
-/* CARD STRIP */
-.stats{
-  position:absolute;
-  bottom:0;
-  width:100%;
-  display:flex;
   justify-content:center;
+  position:relative;
 }
-
-.stats-box{
-  background:rgba(0,40,30,0.9);
-  border:1px solid #d6b56d;
-  display:flex;
-  gap:60px;
-  padding:30px 60px;
-  border-radius:15px;
-  transform:translateY(50%);
+.arch{
+  position:absolute;
+  width:90%;
+  height:92%;
+  bottom:0;
+  border-radius:260px 260px 32px 32px;
+  background:
+    linear-gradient(180deg,rgba(214,181,109,.16),transparent 35%),
+    linear-gradient(135deg,#0b3b2b,#03120d);
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+  overflow:hidden;
 }
-
-.stats-box div{
+.arch::before{
+  content:"X = ξ∂x + η∂y  ·  Lie Symmetry  ·  Noether Conservation Laws";
+  position:absolute;
+  top:45px;
+  left:30px;
+  right:30px;
+  color:rgba(240,217,154,.32);
+  font-family:"Cormorant Garamond",serif;
+  font-size:1.35rem;
   text-align:center;
 }
+.arch::after{
+  content:"";
+  position:absolute;
+  inset:100px 35px 40px;
+  border-radius:18px;
+  background:repeating-linear-gradient(90deg,#17243a 0 18px,#8a5d2f 18px 32px,#1d513e 32px 56px,#6a3428 56px 72px,#c39d4d 72px 78px);
+  opacity:.42;
+  mask-image:linear-gradient(to bottom,#000,transparent 70%);
+}
+.portrait{
+  position:relative;
+  z-index:5;
+  width:min(430px,90%);
+  max-height:650px;
+  object-fit:contain;
+  filter:drop-shadow(0 35px 75px rgba(0,0,0,.7));
+}
+.stats{
+  position:relative;
+  z-index:10;
+  margin-top:-30px;
+  background:rgba(6,37,27,.92);
+  border:1px solid var(--line);
+  border-radius:26px;
+  padding:26px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+  box-shadow:var(--shadow);
+}
+.stat{text-align:center;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat h3{color:var(--gold2);font-family:"Cormorant Garamond",serif;font-size:1.7rem}
+.stat p{color:var(--muted);font-size:.9rem}
 
-.stats-box h3{
-  color:#d6b56d;
+section{padding:90px 0}
+.section-head{max-width:850px;margin-bottom:38px}
+h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(2.7rem,5vw,4.5rem);
+  line-height:.95;
+  margin-bottom:15px;
+}
+.section-head p{color:var(--muted)}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{
+  background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));
+  border:1px solid var(--line);
+  border-radius:26px;
+  padding:28px;
+  box-shadow:0 20px 55px rgba(0,0,0,.22);
+  transition:.3s;
+}
+.card:hover{transform:translateY(-6px);border-color:rgba(240,217,154,.55)}
+.card h3{
+  color:var(--gold2);
+  font-family:"Cormorant Garamond",serif;
+  font-size:1.6rem;
+  margin-bottom:10px;
+}
+.card p,.card li{color:#d7e4dd}
+.card ul{padding-left:20px}
+
+.pills{display:flex;flex-wrap:wrap;gap:12px}
+.pill{
+  padding:10px 16px;
+  border-radius:999px;
+  background:rgba(15,92,67,.24);
+  border:1px solid var(--line);
+  color:#eefbf4;
+  font-weight:700;
+  font-size:.92rem;
+}
+.pill:hover{color:var(--gold2);background:rgba(214,181,109,.13)}
+
+.timeline{display:grid;gap:18px}
+.item{
+  display:grid;
+  grid-template-columns:150px 1fr;
+  gap:24px;
+  padding:24px;
+  border-radius:24px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.045);
+}
+.year{color:var(--gold2);font-weight:900}
+.item strong{color:white}
+.item p{color:var(--muted);margin-top:5px}
+
+.publication-list{
+  border:1px solid var(--line);
+  border-radius:30px;
+  overflow:hidden;
+  background:rgba(255,255,255,.045);
+  box-shadow:var(--shadow);
+}
+.pub{
+  display:grid;
+  grid-template-columns:75px 1fr;
+  gap:20px;
+  padding:24px;
+  border-bottom:1px solid var(--line);
+}
+.pub:last-child{border-bottom:0}
+.pub:hover{background:rgba(214,181,109,.06)}
+.pub-num{
+  width:48px;height:48px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:rgba(214,181,109,.12);
+  border:1px solid var(--line);
+  color:var(--gold2);
+  font-weight:900;
+}
+.pub strong{color:white}
+.pub a:hover strong{color:var(--gold2)}
+.pub span{display:block;color:var(--muted);font-size:.92rem;margin-top:6px}
+
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+footer{
+  padding:38px;
+  text-align:center;
+  color:var(--muted);
+  border-top:1px solid var(--line);
 }
 
+@media(max-width:930px){
+  .links{display:none}
+  .hero-grid,.grid,.contact-grid{grid-template-columns:1fr}
+  .visual{min-height:520px}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat{border-right:0}
+  .item{grid-template-columns:1fr}
+}
 </style>
 </head>
 
 <body>
 
 <nav>
-  <div><b>Dr. Bismah Jamil</b></div>
-  <div>
-    <a href="#">Home</a>
-    <a href="#">Research</a>
-    <a href="#">Publications</a>
-    <a href="#">Contact</a>
+  <div class="container nav">
+    <a class="logo" href="#home">Dr. Bismah Jamil</a>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#qualifications">Qualifications</a>
+      <a href="#experience">Experience</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+    </div>
   </div>
 </nav>
 
-<section class="hero">
+<header class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <div class="badge">Mathematician · Researcher · Educator</div>
+      <h1>Dr. Bismah<br><span>Jamil</span></h1>
+      <div class="title">Symmetry methods for solving differential equations.</div>
+      <p class="lead">
+        My research explores symmetry analysis as a powerful approach for obtaining exact solutions
+        of differential equations, with applications in geodesic systems, fluid flow, heat transfer,
+        conservation laws and mathematical physics.
+      </p>
+      <div class="actions">
+        <a class="btn primary" href="#publications">View Publications</a>
+        <a class="btn" href="#research">Research Interests</a>
+        <a class="btn" href="#contact">Contact</a>
+      </div>
+    </div>
 
-  <div class="hero-left">
-    <h1>Dr. Bismah <span>Jamil</span></h1>
-
-    <p>
-      Symmetry methods for solving differential equations.
-      My research explores symmetry analysis as a powerful approach
-      for obtaining exact solutions in mathematical physics.
-    </p>
-
-    <div class="buttons">
-      <span class="btn gold">View Publications</span>
-      <span class="btn">About Me</span>
+    <div class="visual">
+      <div class="arch"></div>
+      <img class="portrait" src="profile.png" alt="Dr. Bismah Jamil">
     </div>
   </div>
 
-  <div class="hero-right">
-    <img src="profile.png">
+  <div class="container stats">
+    <div class="stat"><h3>Ph.D.</h3><p>Mathematics, NUST</p></div>
+    <div class="stat"><h3>Gold Medalist</h3><p>President’s Gold Medal</p></div>
+    <div class="stat"><h3>11</h3><p>Published / Submitted Papers</p></div>
+    <div class="stat"><h3>8+ Years</h3><p>Teaching & Research</p></div>
   </div>
+</header>
 
-  <div class="stats">
-    <div class="stats-box">
-      <div>
-        <h3>Ph.D.</h3>
-        <p>Mathematics</p>
+<main>
+
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <h2>Academic Profile</h2>
+      <p>
+        Dr. Bismah Jamil is a mathematician whose research focuses on symmetry analysis,
+        Noether symmetries, Lie point symmetries, optimal systems and conservation laws
+        for differential equations.
+      </p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Research Vision</h3>
+        <p>
+          Exploring how symmetry methods reveal exact solutions and conservation structures hidden
+          inside differential equations.
+        </p>
       </div>
-      <div>
-        <h3>Gold Medalist</h3>
-        <p>M.Phil.</p>
+      <div class="card">
+        <h3>Applications</h3>
+        <p>
+          Geodesic systems, fluid flow, heat transfer, mathematical physics, liquid film flow and
+          magnetohydrodynamic models.
+        </p>
       </div>
-      <div>
-        <h3>10+</h3>
-        <p>Publications</p>
-      </div>
-      <div>
-        <h3>8+ Years</h3>
-        <p>Experience</p>
+      <div class="card">
+        <h3>Academic Identity</h3>
+        <p>
+          Mathematician, researcher and educator with university teaching experience and a strong
+          publication record.
+        </p>
       </div>
     </div>
   </div>
-
 </section>
+
+<section id="research">
+  <div class="container">
+    <div class="section-head">
+      <h2>Research Interests</h2>
+      <p>Core areas connecting analytical, geometrical and physical aspects of differential equations.</p>
+    </div>
+
+    <div class="pills">
+      <span class="pill">Symmetry Analysis</span>
+      <span class="pill">Lie Point Symmetries</span>
+      <span class="pill">Noether Symmetries</span>
+      <span class="pill">Optimal Systems</span>
+      <span class="pill">Group-Invariant Solutions</span>
+      <span class="pill">Conservation Laws</span>
+      <span class="pill">Geodesic Equations</span>
+      <span class="pill">Fluid Flow</span>
+      <span class="pill">Heat Transfer</span>
+      <span class="pill">Mathematical Physics</span>
+      <span class="pill">Maple</span>
+      <span class="pill">LaTeX</span>
+    </div>
+  </div>
+</section>
+
+<section id="qualifications">
+  <div class="container">
+    <div class="section-head">
+      <h2>Academic Qualifications</h2>
+      <p>Formal academic training in mathematics.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="item">
+        <div class="year">2013–2019</div>
+        <div>
+          <strong>Ph.D. in Mathematics, School of Natural Sciences, NUST, Islamabad</strong>
+          <p>Dissertation: <em>Noether Symmetries, Corresponding Conservation Laws and Applications</em>.</p>
+          <p>Advisor: Dr. Tooba Feroze. Co-Advisor: Dr. Andrés Vargas.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="year">2010–2012</div>
+        <div>
+          <strong>M.Phil. in Mathematics, School of Natural Sciences, NUST, Islamabad</strong>
+          <p>Dissertation: <em>The Classification of a Class of Plane Symmetric Static Spacetimes According to their Noether Symmetries</em>.</p>
+          <p>Advisor: Dr. Tooba Feroze.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="year">2005–2009</div>
+        <div>
+          <strong>BS Mathematics, COMSATS Institute of Information Technology, Islamabad</strong>
+          <p>Project: <em>On Unsteady Flow and Heat Transfer due to Non-coaxial Rotations of a Disk and a Fluid at Infinity</em>.</p>
+          <p>Advisor: Dr. Muhammad Mushtaq.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <div class="section-head">
+      <h2>Professional Experience</h2>
+      <p>Teaching and academic service experience.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="item">
+        <div class="year">2021–2024</div>
+        <div>
+          <strong>Lecturer, Department of Mathematics, Allama Iqbal Open University, Islamabad</strong>
+          <p>Teaching undergraduate and graduate mathematics courses.</p>
+          <p>Supervising student projects and research.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="year">2016–2020</div>
+        <div>
+          <strong>Temporary Visiting Faculty, School of Natural Sciences, NUST, Islamabad</strong>
+          <p>
+            Taught Linear Algebra, Calculus III, Complex Analysis, Differential Equations for Physicists
+            and Integral Equations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="honors">
+  <div class="container">
+    <div class="section-head">
+      <h2>Honors & Awards</h2>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>President’s Gold Medal</h3>
+        <p>Awarded in 2012 for academic excellence in M.Phil. Mathematics, NUST.</p>
+      </div>
+      <div class="card">
+        <h3>NUST Special Scholarship</h3>
+        <p>Awarded from 2010–2019 for outstanding performance in graduate studies.</p>
+      </div>
+      <div class="card">
+        <h3>Research Recognition</h3>
+        <p>Publications in international journals including Results in Physics, Fractals, IJGMMP and IJMPD.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="container">
+    <div class="section-head">
+      <h2>Publications</h2>
+      <p>Published, submitted and preprint research contributions.</p>
+    </div>
+
+    <div class="publication-list">
+
+      <div class="pub">
+        <div class="pub-num">J1</div>
+        <div>
+          <a href="https://doi.org/10.1016/j.rinp.2025.108492" target="_blank" rel="noopener">
+            <strong>Lie reduced order modeling of unsteady thermosolutal Marangoni magnetohydrodynamic convection conjoined with chemical reaction and heat generation.</strong>
+          </a>
+          <span>Safdar, M., Jamil, B., Nasir, M. T., Iqbal, C. K., Taj, S., & Munir, A. Results in Physics, 78, 108492, 2025.</span>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-num">J2</div>
+        <div>
+          <a href="https://doi.org/10.1142/S0218348X25402492" target="_blank" rel="noopener">
+            <strong>Lie symmetries in nonlinear liquid film flow with heat and mass transfer and variable magnetic field.</strong>
+          </a>
+          <span>Khan, I., Alharthi, T. N., Khan, G., Alhamzi, G., Safdar, M., Jamil, B., Taj, S., Khan, R. A., Hassaballa, A. A., & Koh, W. S. Fractals, 33(10), 2540249, 2025.</span>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-num">J3</div>
+        <div>
+          <a href="https://doi.org/10.3390/materproc2025023007" target="_blank" rel="noopener">
+            <strong>Lie optimal solutions of heat transfer in a liquid film over an unsteady stretching surface with viscous dissipation and external magnetic field.</strong>
+          </a>
+          <span>Ahmad, H., Iqbal, C. K., Safdar, M., Jamil, B., & Taj, S. Materials Proceedings, 23(1), 7, 2025.</span>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-num">J4</div>
+        <div>
+          <a href="https://doi.org/10.1016/j.cjph.2022.01.001" target="_blank" rel="noopener">
+            <strong>One-dimensional optimal system of Lie sub-algebra and analytic solutions for a liquid film fluid flow.</strong>
+          </a>
+          <span>Wang, F., Safdar, M., Jamil, B., Khan, M. I., Taj, S., Malik, M. Y., Alqahtani, A. S., & Galal, A. M. Chinese Journal of Physics, 77, 1–15, 2022.</span>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-num">J5</div>
+        <div>
+          <a href="https://doi.org/10.1142/S0219887819501354" target="_blank" rel="noopener">
+            <strong>Optimal systems and their group-invariant solutions to geodesic equations.</strong>
+          </a>
+          <span>Jamil, B., Feroze, T., & Safdar, M. International Journal of Geometric Methods in Modern Physics, 16, 1950135, 2019.</span>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-num">J6</div>
+        <div>
+          <a href="https://doi.org/10.1142/S0218271817410061" target="_blank" rel="noopener">
+            <strong>Conservation laws corresponding to the Noether symmetries of the geodetic Lagrangian in spherically symmetric spacetimes.</strong>
+          </a>
+          <span>Jamil, B., & Feroze, T. International Journal of Modern Physics D, 26(5), 1741006, 2017.</span>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-num">J7</div>
+        <div>
+          <a href="https://doi.org/10.1155/2017/4384093" target="_blank" rel="noopener">
+            <strong>Geometrical/Physical interpretation of the conserved quantities corresponding to Noether symmetries of plane symmetric spacetimes.</strong>
+          </a>
+          <span>Jamil, B., Feroze, T., & Vargas, A. Advances in Mathematical Physics, Article ID 4384093, 2017.</span>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-num">J8</div>
+        <div>
+          <a href="https://doi.org/10.1142/9789814623995_0294" target="_blank" rel="noopener">
+            <strong>Classification of a class of plane symmetric static spacetimes according to the Noether symmetries.</strong>
+          </a>
+          <span>Feroze, T., & Jamil, B. The Thirteenth Marcel Grossmann Meeting, 1840–1843, 2015.</span>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-num">S1</div>
+        <div>
+          <a href="https://scholar.google.com/scholar?q=%22Some+exact+solutions+for+nonlinear+partial+differential+equations+of+double+diffusive+convection+in+an+open+cavity+using+optimal+system+of+Lie+sub-algebra%22" target="_blank" rel="noopener">
+            <strong>Some exact solutions for nonlinear partial differential equations of double diffusive convection in an open cavity using optimal system of Lie sub-algebra.</strong>
+          </a>
+          <span>Safdar, M., Jamil, B., & Taj, S. Submitted.</span>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-num">S2</div>
+        <div>
+          <a href="https://scholar.google.com/scholar?q=%22Optimal+system+and+group-invariant+solutions+of+the+nonhomogeneous+Monge-Ampere+equation%22" target="_blank" rel="noopener">
+            <strong>Optimal system and group-invariant solutions of the nonhomogeneous Monge-Ampère equation.</strong>
+          </a>
+          <span>Jamil, B., & Feroze, T. Submitted.</span>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-num">S3</div>
+        <div>
+          <a href="https://scholar.google.com/scholar?q=%22Lie+solvable+classes+for+a+squeezing+unsteady+magnetohydrodynamic+Casson+fluid+flow+between+two+parallel+plates%22" target="_blank" rel="noopener">
+            <strong>Lie solvable classes for a squeezing unsteady magnetohydrodynamic Casson fluid flow between two parallel plates under thermal radiation, thermal diffusion and diffusion-thermo effects.</strong>
+          </a>
+          <span>Jamil, B., & Safdar, M. Preprint.</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="conferences">
+  <div class="container">
+    <div class="section-head">
+      <h2>Conferences & Workshops</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="item"><div class="year">2022</div><div><strong>1st International Conference on Revamped Scientific Outlook of 21st Century</strong><p>Talk: One-dimensional optimal system of Lie sub-algebra and analytic solutions for a liquid film fluid flow.</p></div></div>
+      <div class="item"><div class="year">2015</div><div><strong>XX Congresso Colombiano de Mathematicas</strong><p>Talk: Conservation laws corresponding to the Noether symmetries by the geodetic Lagrangian of the spacetimes.</p></div></div>
+      <div class="item"><div class="year">2016</div><div><strong>Workshop on MATLAB Programming and its Applications in Computing</strong><p>Riphah International University, Islamabad.</p></div></div>
+      <div class="item"><div class="year">2010–2015</div><div><strong>International Conferences and Workshops</strong><p>Participated in conferences on fluid mechanics, symmetries, mathematical sciences and inequalities.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-head">
+      <h2>Contact & Research IDs</h2>
+    </div>
+
+    <div class="contact-grid">
+      <div class="card">
+        <h3>Email</h3>
+        <p><a href="mailto:bismah.jamil@gmail.com">bismah.jamil@gmail.com</a></p>
+      </div>
+
+      <div class="card">
+        <h3>Academic Profiles</h3>
+        <p>
+          <a href="https://orcid.org/0000-0001-6652-2870" target="_blank" rel="noopener">ORCID: 0000-0001-6652-2870</a><br>
+          <a href="https://www.scopus.com/authid/detail.uri?authorId=57193835867" target="_blank" rel="noopener">Scopus Author ID: 57193835867</a><br>
+          <a href="https://www.webofscience.com/wos/author/record/OMK-5389-2025" target="_blank" rel="noopener">Web of Science Researcher ID: OMK-5389-2025</a><br>
+          <a href="https://scholar.google.com/citations?hl=en&user=lAAUeN4AAAAJ" target="_blank" rel="noopener">Google Scholar Profile</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  © 2026 Dr. Bismah Jamil. Academic Portfolio.
+</footer>
 
 </body>
 </html>
